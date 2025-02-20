@@ -41,3 +41,11 @@ build/
 # Temporary files
 *.tmp
 *.temp
+
+# Config
+config.json
+
+# yarn
+.yarn/
+.yarnrc.yml
+yarn.lock
