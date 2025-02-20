@@ -1,0 +1,2747 @@
+{
+    "@context": {
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "dfc": "https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_FullModel.owl#",
+      "dc": "http://purl.org/dc/elements/1.1/#",
+      "dfc-b": "https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_BusinessOntology.owl#",
+      "dfc-t": "https://github.com/datafoodconsortium/ontology/releases/latest/download/DFC_TechnicalOntology.owl#",
+      "dfc-m": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/measures.rdf#",
+      "dfc-pt": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/productTypes.rdf#",
+      "dfc-f": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/facets.rdf#",
+      "dfc-v": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/vocabulary.rdf#",
+      "ontosec": "http://www.semanticweb.org/ontologies/2008/11/OntologySecurity.owl#",
+      "dfc-b:DFC_BusinessOntology_ObjectProperty": {
+        "@type": "@id"
+      },
+      "dfc-b:DFC_Interface_Property": {
+        "@type": "@id"
+      },
+      "dfc-b:addressOf": {
+        "@type": "@id"
+      },
+      "dfc-b:affiliatedTo": {
+        "@type": "@id"
+      },
+      "dfc-b:affiliates": {
+        "@type": "@id"
+      },
+      "dfc-b:allergenCharacteristicOf": {
+        "@type": "@id"
+      },
+      "dfc-b:belongsTo": {
+        "@type": "@id"
+      },
+      "dfc-b:brandOf": {
+        "@type": "@id"
+      },
+      "dfc-b:certificateOf": {
+        "@type": "@id"
+      },
+      "dfc-b:characteristicOf": {
+        "@type": "@id"
+      },
+      "dfc-b:claimOf": {
+        "@type": "@id"
+      },
+      "dfc-b:composedOf": {
+        "@type": "@id"
+      },
+      "dfc-b:composes": {
+        "@type": "@id"
+      },
+      "dfc-b:concernedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:concerns": {
+        "@type": "@id"
+      },
+      "dfc-b:constituedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:constitutes": {
+        "@type": "@id"
+      },
+      "dfc-b:consumedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:consumes": {
+        "@type": "@id"
+      },
+      "dfc-b:containerInformationOf": {
+        "@type": "@id"
+      },
+      "dfc-b:coordinatedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:coordinates": {
+        "@type": "@id"
+      },
+      "dfc-b:definedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:defines": {
+        "@type": "@id"
+      },
+      "dfc-b:deliveredAt": {
+        "@type": "@id"
+      },
+      "dfc-b:facetOf": {
+        "@type": "@id"
+      },
+      "dfc-b:from": {
+        "@type": "@id"
+      },
+      "dfc-b:geographicalOriginOf": {
+        "@type": "@id"
+      },
+      "dfc-b:hasAddress": {
+        "@type": "@id"
+      },
+      "dfc-b:hasAllergenCharacteristic": {
+        "@type": "@id"
+      },
+      "dfc-b:hasAllergenDimension": {
+        "@type": "@id"
+      },
+      "dfc-b:hasBrand": {
+        "@type": "@id"
+      },
+      "dfc-b:hasCertification": {
+        "@type": "@id"
+      },
+      "dfc-b:hasCharacteristic": {
+        "@type": "@id"
+      },
+      "dfc-b:hasClaim": {
+        "@type": "@id"
+      },
+      "dfc-b:hasContainerInformation": {
+        "@type": "@id"
+      },
+      "dfc-b:hasDimension": {
+        "@type": "@id"
+      },
+      "dfc-b:hasFacet": {
+        "@type": "@id"
+      },
+      "dfc-b:hasFulfilmentStatus": {
+        "@type": "@id"
+      },
+      "dfc-b:hasGeographicalOrigin": {
+        "@type": "@id"
+      },
+      "dfc-b:hasIngredient": {
+        "@type": "@id"
+      },
+      "dfc-b:hasInput": {
+        "@type": "@id"
+      },
+      "dfc-b:hasLabellingCharacteristic": {
+        "@type": "@id"
+      },
+      "dfc-b:hasLabellingDimension": {
+        "@type": "@id"
+      },
+      "dfc-b:hasMainContact": {
+        "@type": "@id"
+      },
+      "dfc-b:hasNatureOrigin": {
+        "@type": "@id"
+      },
+      "dfc-b:hasNutrientCharacteristic": {
+        "@type": "@id"
+      },
+      "dfc-b:hasNutrientDimension": {
+        "@type": "@id"
+      },
+      "dfc-b:hasObject": {
+        "@type": "@id"
+      },
+      "dfc-b:hasOffer": {
+        "@type": "@id"
+      },
+      "dfc-b:hasOption": {
+        "@type": "@id"
+      },
+      "dfc-b:hasOrderStatus": {
+        "@type": "@id"
+      },
+      "dfc-b:hasOutput": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPart": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPartOrigin": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPaymentMethod": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPaymentStatus": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPhoneNumber": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPhysicalCharacteristic": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPhysicalDimension": {
+        "@type": "@id"
+      },
+      "dfc-b:hasPrice": {
+        "@type": "@id"
+      },
+      "dfc-b:hasProcess": {
+        "@type": "@id"
+      },
+      "dfc-b:hasQuantity": {
+        "@type": "@id"
+      },
+      "dfc-b:hasReference": {
+        "@type": "@id"
+      },
+      "dfc-b:hasSocialMedia": {
+        "@type": "@id"
+      },
+      "dfc-b:hasStatus": {
+        "@type": "@id"
+      },
+      "dfc-b:hasTemperature": {
+        "@type": "@id"
+      },
+      "dfc-b:hasTransformationType": {
+        "@type": "@id"
+      },
+      "dfc-b:hasType": {
+        "@type": "@id"
+      },
+      "dfc-b:hasUnit": {
+        "@type": "@id"
+      },
+      "dfc-b:holds": {
+        "@type": "@id"
+      },
+      "dfc-b:hostedAt": {
+        "@type": "@id"
+      },
+      "dfc-b:hosts": {
+        "@type": "@id"
+      },
+      "dfc-b:identifiedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:identifies": {
+        "@type": "@id"
+      },
+      "dfc-b:industrializedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:industrializes": {
+        "@type": "@id"
+      },
+      "dfc-b:inputOf": {
+        "@type": "@id"
+      },
+      "dfc-b:isIngredientOf": {
+        "@type": "@id"
+      },
+      "dfc-b:isPriceOf": {
+        "@type": "@id"
+      },
+      "dfc-b:isTemperatureOf": {
+        "@type": "@id"
+      },
+      "dfc-b:labellingCharacteristicOf": {
+        "@type": "@id"
+      },
+      "dfc-b:listedIn": {
+        "@type": "@id"
+      },
+      "dfc-b:lists": {
+        "@type": "@id"
+      },
+      "dfc-b:localizedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:localizes": {
+        "@type": "@id"
+      },
+      "dfc-b:mainContactOf": {
+        "@type": "@id"
+      },
+      "dfc-b:maintainedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:maintains": {
+        "@type": "@id"
+      },
+      "dfc-b:managedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:manages": {
+        "@type": "@id"
+      },
+      "dfc-b:natureOriginOf": {
+        "@type": "@id"
+      },
+      "dfc-b:nutrientCharacteristicOf": {
+        "@type": "@id"
+      },
+      "dfc-b:objectOf": {
+        "@type": "@id"
+      },
+      "dfc-b:offeredThrough": {
+        "@type": "@id"
+      },
+      "dfc-b:offers": {
+        "@type": "@id"
+      },
+      "dfc-b:offersTo": {
+        "@type": "@id"
+      },
+      "dfc-b:optionOf": {
+        "@type": "@id"
+      },
+      "dfc-b:orderedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:orders": {
+        "@type": "@id"
+      },
+      "dfc-b:outputOf": {
+        "@type": "@id"
+      },
+      "dfc-b:ownedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:owns": {
+        "@type": "@id"
+      },
+      "dfc-b:paidWith": {
+        "@type": "@id"
+      },
+      "dfc-b:partOf": {
+        "@type": "@id"
+      },
+      "dfc-b:partOriginOf": {
+        "@type": "@id"
+      },
+      "dfc-b:phoneNumberOf": {
+        "@type": "@id"
+      },
+      "dfc-b:physicalCharacteristicOf": {
+        "@type": "@id"
+      },
+      "dfc-b:pickedUpAt": {
+        "@type": "@id"
+      },
+      "dfc-b:processOf": {
+        "@type": "@id"
+      },
+      "dfc-b:producedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:produces": {
+        "@type": "@id"
+      },
+      "dfc-b:proposedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:proposes": {
+        "@type": "@id"
+      },
+      "dfc-b:referenceOf": {
+        "@type": "@id"
+      },
+      "dfc-b:referencedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:references": {
+        "@type": "@id"
+      },
+      "dfc-b:refersTo": {
+        "@type": "@id"
+      },
+      "dfc-b:representedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:represents": {
+        "@type": "@id"
+      },
+      "dfc-b:requestedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:requests": {
+        "@type": "@id"
+      },
+      "dfc-b:satisfiedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:satisfies": {
+        "@type": "@id"
+      },
+      "dfc-b:selectedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:selects": {
+        "@type": "@id"
+      },
+      "dfc-b:socialMediaOf": {
+        "@type": "@id"
+      },
+      "dfc-b:sold": {
+        "@type": "@id"
+      },
+      "dfc-b:soldBy": {
+        "@type": "@id"
+      },
+      "dfc-b:storedIn": {
+        "@type": "@id"
+      },
+      "dfc-b:stores": {
+        "@type": "@id"
+      },
+      "dfc-b:suppliedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:supplies": {
+        "@type": "@id"
+      },
+      "dfc-b:suppliesTo": {
+        "@type": "@id"
+      },
+      "dfc-b:to": {
+        "@type": "@id"
+      },
+      "dfc-b:tracedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:traces": {
+        "@type": "@id"
+      },
+      "dfc-b:transformedBy": {
+        "@type": "@id"
+      },
+      "dfc-b:transforms": {
+        "@type": "@id"
+      },
+      "dfc-b:typeOf": {
+        "@type": "@id"
+      },
+      "dfc-b:uses": {
+        "@type": "@id"
+      },
+      "dfc-b:fulfills": {
+        "@type": "@id"
+      },
+      "dfc-b:fulfilledBy": {
+        "@type": "@id"
+      },
+      "dfc-b:isStoredIn": {
+        "@type": "@id"
+      },
+      "dfc-b:constitutedBy": {
+        "@type": "@id"
+      },
+      "dfc-t:represent": {
+        "@type": "@id"
+      },
+      "dfc-t:hasPivot": {
+        "@type": "@id"
+      },
+      "dfc-t:hostedBy": {
+        "@type": "@id"
+      },
+      "dfc-t:owner": {
+        "@type": "@id"
+      }
+    },
+    "@graph": [
+      {
+        "@id": "http://maPlateformeNationale/order/orderId1-3",
+        "@type": "dfc-b:Order",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:date": "2023-02-13T14:30:00+01:00",
+        "dfc-b:discount": "0",
+        "dfc-b:hasPart": [
+          "http://maPlateformeNationale/orderline/orderlineId1-3",
+          "http://maPlateformeNationale/orderline/orderlineId2-3"
+        ],
+        "dfc-b:orderNumber": "0001",
+        "dfc-b:orderedBy": "http://maPlateformeNationale/person/personId-3",
+        "dfc-b:selects": "http://maPlateformeNationale/pickupOption/pickupOptionId1-3",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId1-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId1-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId1-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "40"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1000"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId1-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId1-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "10"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId1-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId1-3",
+        "dfc-b:stockLimitation": "999"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId1-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId2-3",
+          "http://maPlateformeNationale/offer/offerId1-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item1-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a071",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item1-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "20 fresh eggs",
+        "dfc-b:hasAllergenCharacteristic": {},
+        "dfc-b:hasBrand": "http://maPlateformeNationale/brand/brandId1-3",
+        "dfc-b:hasCertification": "dfc-f:Organic-AB",
+        "dfc-b:hasClaim": [
+          "dfc-f:LowSodiumSalt",
+          "dfc-f:NoAddedSugars",
+          "dfc-f:IncreasedNutrient"
+        ],
+        "dfc-b:hasGeographicalOrigin": "dfc-f:CentreValLoire",
+        "dfc-b:hasNatureOrigin": "dfc-f:PlantOrigin",
+        "dfc-b:hasNutrientCharacteristic": {},
+        "dfc-b:hasPartOrigin": "dfc-f:PlantPartOrigin",
+        "dfc-b:hasPhysicalCharacteristic": {},
+        "dfc-b:hasProcess": "http://maPlateformeNationale/suppliedProduct/item2-3",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1000"
+        },
+        "dfc-b:hasType": "dfc-pt:egg",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Farmers Eggs",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId1-3",
+        "dfc-b:totalTheoriticalStock": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07b",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "dfc-pt:egg",
+        "@type": "skos:Concept",
+        "skos:broader": {
+          "@id": "dfc-pt:meat-product"
+        },
+        "skos:inScheme": {
+          "@id": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/productTypes.rdf"
+        },
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "œuf"
+          },
+          {
+            "@language": "en",
+            "@value": "egg"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "40"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId1-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId1-3",
+        "dfc-b:description": "Description du produit physique 1",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId1-3",
+        "dfc-b:name": "Nom du produit physique 1",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId1-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId1-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId1-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId14-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId14-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Baron-sur-Odon",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.131679507443266",
+          "dfc-b:longitude": "-0.4850272204227221",
+          "dfc-b:postcode": "14210",
+          "dfc-b:street": "2 Chem. des Murailles"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Baron-sur-Odon",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.131679507443266",
+        "dfc-b:longitude": "-0.4850272204227221",
+        "dfc-b:postcode": "14210",
+        "dfc-b:street": "2 Chem. des Murailles"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId2-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId2-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId2-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "20"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "500"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId1-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId2-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "10"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId1-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId2-3",
+        "dfc-b:stockLimitation": "999"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId1-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId2-3",
+          "http://maPlateformeNationale/offer/offerId1-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item1-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a071",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item1-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "20 fresh eggs",
+        "dfc-b:hasAllergenCharacteristic": {},
+        "dfc-b:hasBrand": "http://maPlateformeNationale/brand/brandId1-3",
+        "dfc-b:hasCertification": "dfc-f:Organic-AB",
+        "dfc-b:hasClaim": [
+          "dfc-f:LowSodiumSalt",
+          "dfc-f:NoAddedSugars",
+          "dfc-f:IncreasedNutrient"
+        ],
+        "dfc-b:hasGeographicalOrigin": "dfc-f:CentreValLoire",
+        "dfc-b:hasNatureOrigin": "dfc-f:PlantOrigin",
+        "dfc-b:hasNutrientCharacteristic": {},
+        "dfc-b:hasPartOrigin": "dfc-f:PlantPartOrigin",
+        "dfc-b:hasPhysicalCharacteristic": {},
+        "dfc-b:hasProcess": "http://maPlateformeNationale/suppliedProduct/item2-3",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1000"
+        },
+        "dfc-b:hasType": "dfc-pt:egg",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Farmers Eggs",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId1-3",
+        "dfc-b:totalTheoriticalStock": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07b",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "dfc-pt:egg",
+        "@type": "skos:Concept",
+        "skos:broader": {
+          "@id": "dfc-pt:meat-product"
+        },
+        "skos:inScheme": {
+          "@id": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/productTypes.rdf"
+        },
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "œuf"
+          },
+          {
+            "@language": "en",
+            "@value": "egg"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "20"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId2-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId2-3",
+        "dfc-b:description": "Description du produit physique 2",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId2-3",
+        "dfc-b:name": "Nom du produit physique 2",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId2-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId2-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId2-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId5-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId5-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Caen",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.17362407012408",
+          "dfc-b:longitude": "-0.38456067708166475",
+          "dfc-b:postcode": "14000",
+          "dfc-b:street": "31 Rue Joseph Philippon"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Caen",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.17362407012408",
+        "dfc-b:longitude": "-0.38456067708166475",
+        "dfc-b:postcode": "14000",
+        "dfc-b:street": "31 Rue Joseph Philippon"
+      },
+      {
+        "@id": "http://maPlateformeNationale/pickupOption/pickupOptionId1-3",
+        "@type": "dfc-b:PickupOption",
+        "dfc-b:endDate": "2025-01-22T18:00:00+01:00",
+        "dfc-b:pickedUpAt": "http://maPlateformeNationale/physicalPlace/physicalPlaceId1-3",
+        "dfc-b:startDate": "2025-01-15T09:00:00+01:00"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId1-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Caen",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.19895618338983",
+          "dfc-b:longitude": "-0.3666812586751294",
+          "dfc-b:postcode": "14000",
+          "dfc-b:street": "16 Rue de la Défense PassiveBP 5132"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Caen",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.19895618338983",
+        "dfc-b:longitude": "-0.3666812586751294",
+        "dfc-b:postcode": "14000",
+        "dfc-b:street": "16 Rue de la Défense PassiveBP 5132"
+      },
+      {
+        "@id": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "@type": "http://static.datafoodconsortium.org/ontologies/DFC_TechnicalOntology.owl#Platform",
+        "rdfs:label": "test v1.13 echelle ville"
+      },
+      {
+        "@id": "http://maPlateformeNationale/order/orderId2-3",
+        "@type": "dfc-b:Order",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:date": "2023-02-14T10:00:00+01:00",
+        "dfc-b:discount": "0",
+        "dfc-b:hasPart": [
+          "http://maPlateformeNationale/orderline/orderlineId4-3",
+          "http://maPlateformeNationale/orderline/orderlineId3-3"
+        ],
+        "dfc-b:orderNumber": "0002",
+        "dfc-b:orderedBy": "http://maPlateformeNationale/person/personId-3",
+        "dfc-b:selects": "http://maPlateformeNationale/pickupOption/pickupOptionId2-3",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId4-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId4-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId4-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "50"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1500"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId2-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId4-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:discount": "5",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "10"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId2-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId2-3",
+        "dfc-b:stockLimitation": "999"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId2-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId4-3",
+          "http://maPlateformeNationale/offer/offerId3-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item2-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a070",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item2-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Strawberries coming from Andrew's farm.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1000"
+        },
+        "dfc-b:hasType": "dfc-pt:strawberry",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Plougastel's Strawberries",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId2-3",
+        "dfc-b:totalTheoriticalStock": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07a",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "dfc-pt:strawberry",
+        "@type": "skos:Concept",
+        "skos:broader": {
+          "@id": "dfc-pt:fruit"
+        },
+        "skos:inScheme": {
+          "@id": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/productTypes.rdf"
+        },
+        "skos:prefLabel": [
+          {
+            "@language": "en",
+            "@value": "strawberry"
+          },
+          {
+            "@language": "fr",
+            "@value": "fraise"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "50"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId4-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId4-3",
+        "dfc-b:description": "Description du produit physique 4",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId4-3",
+        "dfc-b:name": "Nom du produit physique 4",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId4-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId4-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId4-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId7-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId7-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Bavent",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.21333644722057",
+          "dfc-b:longitude": "-0.1758204511385019",
+          "dfc-b:postcode": "1480",
+          "dfc-b:street": "Rocheville"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Bavent",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.21333644722057",
+        "dfc-b:longitude": "-0.1758204511385019",
+        "dfc-b:postcode": "1480",
+        "dfc-b:street": "Rocheville"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId3-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId3-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId3-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "60"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "2000"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId2-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId3-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "10"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId2-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId1-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId2-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId4-3",
+          "http://maPlateformeNationale/offer/offerId3-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item2-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a070",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item2-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Strawberries coming from Andrew's farm.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1000"
+        },
+        "dfc-b:hasType": "dfc-pt:strawberry",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Plougastel's Strawberries",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId2-3",
+        "dfc-b:totalTheoriticalStock": "999",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07a",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "dfc-pt:strawberry",
+        "@type": "skos:Concept",
+        "skos:broader": {
+          "@id": "dfc-pt:fruit"
+        },
+        "skos:inScheme": {
+          "@id": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/productTypes.rdf"
+        },
+        "skos:prefLabel": [
+          {
+            "@language": "en",
+            "@value": "strawberry"
+          },
+          {
+            "@language": "fr",
+            "@value": "fraise"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "60"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "2000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId3-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId3-3",
+        "dfc-b:description": "Description du produit physique 3",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId3-3",
+        "dfc-b:name": "Nom du produit physique 3",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId3-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId3-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId3-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId6-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId6-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Fontenay-le-Marmion",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.097700552856345",
+          "dfc-b:longitude": "-0.35091504855793126",
+          "dfc-b:postcode": "14320",
+          "dfc-b:street": "2 route de"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Fontenay-le-Marmion",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.097700552856345",
+        "dfc-b:longitude": "-0.35091504855793126",
+        "dfc-b:postcode": "14320",
+        "dfc-b:street": "2 route de"
+      },
+      {
+        "@id": "http://maPlateformeNationale/pickupOption/pickupOptionId2-3",
+        "@type": "dfc-b:PickupOption",
+        "dfc-b:endDate": "2025-01-25T17:00:00+01:00",
+        "dfc-b:pickedUpAt": "http://maPlateformeNationale/physicalPlace/physicalPlaceId2-3",
+        "dfc-b:startDate": "2025-01-18T10:00:00+01:00"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId2-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Caen",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.17611720062148",
+          "dfc-b:longitude": "-0.37223033236568337",
+          "dfc-b:postcode": "14000",
+          "dfc-b:street": "14 Av. Albert Sorel"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Caen",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.17611720062148",
+        "dfc-b:longitude": "-0.37223033236568337",
+        "dfc-b:postcode": "14000",
+        "dfc-b:street": "14 Av. Albert Sorel"
+      },
+      {
+        "@id": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "@type": "http://static.datafoodconsortium.org/ontologies/DFC_TechnicalOntology.owl#Platform",
+        "rdfs:label": "test v1.13 echelle ville"
+      },
+      {
+        "@id": "http://maPlateformeNationale/order/orderId3-3",
+        "@type": "dfc-b:Order",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:date": "2023-02-15T11:00:00+01:00",
+        "dfc-b:discount": "0",
+        "dfc-b:hasPart": [
+          "http://maPlateformeNationale/orderline/orderlineId6-3",
+          "http://maPlateformeNationale/orderline/orderlineId5-3"
+        ],
+        "dfc-b:orderNumber": "0003",
+        "dfc-b:orderedBy": "http://maPlateformeNationale/person/personId-3",
+        "dfc-b:selects": "http://maPlateformeNationale/pickupOption/pickupOptionId3-3",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId6-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId6-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId6-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "20"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "500"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId3-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId6-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:discount": "2",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "5"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId3-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId2-3",
+        "dfc-b:stockLimitation": "500"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId3-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId5-3",
+          "http://maPlateformeNationale/offer/offerId6-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item3-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a073",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item3-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Fresh golden apples from the orchard.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "500"
+        },
+        "dfc-b:hasType": "dfc-pt:apple",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Golden Apples",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId3-3",
+        "dfc-b:totalTheoriticalStock": "500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07c",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "20"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId6-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId6-3",
+        "dfc-b:description": "Description du produit physique 6",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId6-3",
+        "dfc-b:name": "Nom du produit physique 6",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId6-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId6-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId6-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId9-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId9-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Biéville-Beuville",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.23239603342913",
+          "dfc-b:longitude": "-0.36602125215673303",
+          "dfc-b:postcode": "14112",
+          "dfc-b:street": "Hameau de, La Bijude"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Biéville-Beuville",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.23239603342913",
+        "dfc-b:longitude": "-0.36602125215673303",
+        "dfc-b:postcode": "14112",
+        "dfc-b:street": "Hameau de, La Bijude"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId5-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId5-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId5-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "40"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1000"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId3-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId5-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "5"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId3-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId1-3",
+        "dfc-b:stockLimitation": "500"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId3-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId5-3",
+          "http://maPlateformeNationale/offer/offerId6-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item3-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a073",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item3-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Fresh golden apples from the orchard.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "500"
+        },
+        "dfc-b:hasType": "dfc-pt:apple",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Golden Apples",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId3-3",
+        "dfc-b:totalTheoriticalStock": "500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07c",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "40"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId5-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId5-3",
+        "dfc-b:description": "Description du produit physique 5",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId5-3",
+        "dfc-b:name": "Nom du produit physique 5",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId5-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId5-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId5-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId8-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId8-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Villers-Bocage",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.08451431188889",
+          "dfc-b:longitude": "-0.653657859405463",
+          "dfc-b:postcode": "14310",
+          "dfc-b:street": "1 Chem. du Mézerais"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Villers-Bocage",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.08451431188889",
+        "dfc-b:longitude": "-0.653657859405463",
+        "dfc-b:postcode": "14310",
+        "dfc-b:street": "1 Chem. du Mézerais"
+      },
+      {
+        "@id": "http://maPlateformeNationale/pickupOption/pickupOptionId3-3",
+        "@type": "dfc-b:PickupOption",
+        "dfc-b:endDate": "2025-01-23T19:00:00+01:00",
+        "dfc-b:pickedUpAt": "http://maPlateformeNationale/physicalPlace/physicalPlaceId3-3",
+        "dfc-b:startDate": "2025-01-16T11:00:00+01:00"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId3-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Caen",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.16120137868878",
+          "dfc-b:longitude": "-0.3537091451826174",
+          "dfc-b:postcode": "14000",
+          "dfc-b:street": "98 Rte d'Ifs"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Caen",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.16120137868878",
+        "dfc-b:longitude": "-0.3537091451826174",
+        "dfc-b:postcode": "14000",
+        "dfc-b:street": "98 Rte d'Ifs"
+      },
+      {
+        "@id": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "@type": "http://static.datafoodconsortium.org/ontologies/DFC_TechnicalOntology.owl#Platform",
+        "rdfs:label": "test v1.13 echelle ville"
+      },
+      {
+        "@id": "http://maPlateformeNationale/order/orderId4-3",
+        "@type": "dfc-b:Order",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:date": "2023-02-16T12:00:00+01:00",
+        "dfc-b:discount": "0",
+        "dfc-b:hasPart": [
+          "http://maPlateformeNationale/orderline/orderlineId9-3",
+          "http://maPlateformeNationale/orderline/orderlineId8-3",
+          "http://maPlateformeNationale/orderline/orderlineId7-3",
+          "http://maPlateformeNationale/orderline/orderlineId10-3"
+        ],
+        "dfc-b:orderNumber": "0004",
+        "dfc-b:orderedBy": "http://maPlateformeNationale/person/personId-3",
+        "dfc-b:selects": "http://maPlateformeNationale/pickupOption/pickupOptionId4-3",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId9-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId9-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId9-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "40"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1000"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId4-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId9-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "20"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId5-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId1-3",
+        "dfc-b:stockLimitation": "1500"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId5-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId10-3",
+          "http://maPlateformeNationale/offer/offerId9-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item5-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "1500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804f72f053421cf6a074",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item5-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Aged cheese with a rich flavor.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1500"
+        },
+        "dfc-b:hasType": "dfc-pt:cheese",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Aged Cheese",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId5-3",
+        "dfc-b:totalTheoriticalStock": "1500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07d",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "40"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId9-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId9-3",
+        "dfc-b:description": "Description du produit physique 9",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId9-3",
+        "dfc-b:name": "Nom du produit physique 9",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId9-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId9-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId9-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId12-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId12-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Laize-Clinchamps",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.08196825842864",
+          "dfc-b:longitude": "-0.39610724916716505",
+          "dfc-b:postcode": "14320",
+          "dfc-b:street": "7 Chem. des Boutières"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Laize-Clinchamps",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.08196825842864",
+        "dfc-b:longitude": "-0.39610724916716505",
+        "dfc-b:postcode": "14320",
+        "dfc-b:street": "7 Chem. des Boutières"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId8-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId8-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId8-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "50"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1500"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId4-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId8-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:discount": "3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "15"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId4-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId2-3",
+        "dfc-b:stockLimitation": "2000"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId4-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId7-3",
+          "http://maPlateformeNationale/offer/offerId8-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item4-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "2000",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a072",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item4-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Fresh organic milk from local farms.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "2000"
+        },
+        "dfc-b:hasType": "dfc-pt:milk",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Organic Milk",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId4-3",
+        "dfc-b:totalTheoriticalStock": "2000",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07e",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "dfc-pt:milk",
+        "@type": "skos:Concept",
+        "skos:broader": {
+          "@id": "dfc-pt:cow-dairy-product"
+        },
+        "skos:inScheme": {
+          "@id": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/productTypes.rdf"
+        },
+        "skos:prefLabel": [
+          {
+            "@language": "en",
+            "@value": "milk"
+          },
+          {
+            "@language": "fr",
+            "@value": "lait"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "2000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "50"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId8-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId8-3",
+        "dfc-b:description": "Description du produit physique 8",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId8-3",
+        "dfc-b:name": "Nom du produit physique 8",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId8-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId8-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId8-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId11-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId11-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Coulombs",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.24293170696967",
+          "dfc-b:longitude": "-0.5809412919138631",
+          "dfc-b:postcode": "14480",
+          "dfc-b:street": "Le Grand Parc"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Coulombs",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.24293170696967",
+        "dfc-b:longitude": "-0.5809412919138631",
+        "dfc-b:postcode": "14480",
+        "dfc-b:street": "Le Grand Parc"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId7-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId7-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId7-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "60"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "2000"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId4-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId7-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "15"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId4-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId1-3",
+        "dfc-b:stockLimitation": "2000"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId4-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId7-3",
+          "http://maPlateformeNationale/offer/offerId8-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item4-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "2000",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804e72f053421cf6a072",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item4-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Fresh organic milk from local farms.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "2000"
+        },
+        "dfc-b:hasType": "dfc-pt:milk",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Organic Milk",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId4-3",
+        "dfc-b:totalTheoriticalStock": "2000",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07e",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "dfc-pt:milk",
+        "@type": "skos:Concept",
+        "skos:broader": {
+          "@id": "dfc-pt:cow-dairy-product"
+        },
+        "skos:inScheme": {
+          "@id": "https://github.com/datafoodconsortium/taxonomies/releases/latest/download/productTypes.rdf"
+        },
+        "skos:prefLabel": [
+          {
+            "@language": "en",
+            "@value": "milk"
+          },
+          {
+            "@language": "fr",
+            "@value": "lait"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "2000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "60"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "2000"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId7-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId7-3",
+        "dfc-b:description": "Description du produit physique 7",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId7-3",
+        "dfc-b:name": "Nom du produit physique 7",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId7-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId7-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId7-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId10-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId10-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Banville",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.31289282291928",
+          "dfc-b:longitude": "-0.48730065875685036",
+          "dfc-b:postcode": "14480",
+          "dfc-b:street": "1 Rue du Camp Romain"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Banville",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.31289282291928",
+        "dfc-b:longitude": "-0.48730065875685036",
+        "dfc-b:postcode": "14480",
+        "dfc-b:street": "1 Rue du Camp Romain"
+      },
+      {
+        "@id": "http://maPlateformeNationale/orderline/orderlineId10-3",
+        "@type": "dfc-b:OrderLine",
+        "dfc-b:belongsTo": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:concerns": "http://maPlateformeNationale/offer/offerId10-3",
+        "dfc-b:discount": "0",
+        "dfc-b:fulfilledBy": "http://maPlateformeNationale/physicalProduct/physicalProductId10-3",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "20"
+        },
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "500"
+        },
+        "dfc-b:partOf": "http://maPlateformeNationale/order/orderId4-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/offer/offerId10-3",
+        "@type": "dfc-b:Offer",
+        "dfc-b:discount": "4",
+        "dfc-b:hasPrice": {
+          "@type": "dfc-b:Price",
+          "dfc-b:VATrate": "5",
+          "dfc-b:hasUnit": "dfc-m:Euro",
+          "dfc-b:value": "20"
+        },
+        "dfc-b:listedIn": "http://maPlateformeNationale/salessession/salessessionId1-3",
+        "dfc-b:offers": "http://maPlateformeNationale/catalogItem/catalogItemId5-3",
+        "dfc-b:offersTo": "http://maPlateformeNationale/customerCategory/customerCategoryId2-3",
+        "dfc-b:stockLimitation": "1500"
+      },
+      {
+        "@id": "http://maPlateformeNationale/catalogItem/catalogItemId5-3",
+        "@type": "dfc-b:CatalogItem",
+        "dfc-b:listedIn": "http://maPlateformeNationale/catalog/catalog-3",
+        "dfc-b:offeredThrough": [
+          "http://maPlateformeNationale/offer/offerId10-3",
+          "http://maPlateformeNationale/offer/offerId9-3"
+        ],
+        "dfc-b:references": "http://maPlateformeNationale/suppliedProduct/item5-3",
+        "dfc-b:sku": "catalog item gtin or sku",
+        "dfc-b:stockLimitation": "1500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa804f72f053421cf6a074",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@id": "http://maPlateformeNationale/suppliedProduct/item5-3",
+        "@type": "dfc-b:SuppliedProduct",
+        "dfc-b:description": "Aged cheese with a rich flavor.",
+        "dfc-b:hasQuantity": {
+          "@type": "dfc-b:QuantitiveValue",
+          "dfc-b:hasUnit": "dfc-m:Gram",
+          "dfc-b:value": "1500"
+        },
+        "dfc-b:hasType": "dfc-pt:cheese",
+        "dfc-b:image": "supply image url",
+        "dfc-b:lifeTime": "supply lifeTime",
+        "dfc-b:name": "Aged Cheese",
+        "dfc-b:referencedBy": "http://maPlateformeNationale/catalogItem/catalogItemId5-3",
+        "dfc-b:totalTheoriticalStock": "1500",
+        "dfc-t:hasPivot": "http://dfc-middleware:3000/ldp/pivot/67aa805172f053421cf6a07d",
+        "dfc-t:hostedBy": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "dfc-t:owner": "http://dfc-middleware:3000/ldp/user/66da458eb564eab9394c9138"
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "1500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:Price",
+        "dfc-b:VATrate": "5",
+        "dfc-b:hasUnit": "dfc-m:Euro",
+        "dfc-b:value": "20"
+      },
+      {
+        "@id": "dfc-m:Euro",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:Euro"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:CurrencyUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "€",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "euro"
+          },
+          {
+            "@language": "en",
+            "@value": "euro"
+          }
+        ]
+      },
+      {
+        "@type": "dfc-b:QuantitiveValue",
+        "dfc-b:hasUnit": "dfc-m:Gram",
+        "dfc-b:value": "500"
+      },
+      {
+        "@id": "dfc-m:Gram",
+        "@type": "skos:Concept",
+        "rdfs:isDefinedBy": {
+          "@id": "unit:GM"
+        },
+        "skos:broader": {
+          "@id": "dfc-m:QuantityUnit"
+        },
+        "skos:inScheme": {
+          "@id": "dfc-m:DFC_ProductGlossary_Measure"
+        },
+        "skos:notation": "g",
+        "skos:prefLabel": [
+          {
+            "@language": "fr",
+            "@value": "gramme"
+          },
+          {
+            "@language": "en",
+            "@value": "gram"
+          }
+        ]
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalProduct/physicalProductId10-3",
+        "@type": "dfc-b:PhysicalProduct",
+        "dfc-b:constitutedBy": "http://maPlateformeNationale/realStock/realStockId10-3",
+        "dfc-b:description": "Description du produit physique 10",
+        "dfc-b:fulfills": "http://maPlateformeNationale/orderline/orderlineId10-3",
+        "dfc-b:name": "Nom du produit physique 10",
+        "dfc-b:represents": "http://maPlateformeNationale/localizedProduct/localizedProductId10-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/realStock/realStockId10-3",
+        "@type": "dfc-b:RealStock",
+        "dfc-b:constitutes": "http://maPlateformeNationale/physicalProduct/physicalProductId10-3",
+        "dfc-b:isStoredIn": "http://maPlateformeNationale/physicalPlace/physicalPlaceId13-3"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId13-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Baron-sur-Odon",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.131679507443266",
+          "dfc-b:longitude": "-0.4850272204227221",
+          "dfc-b:postcode": "14210",
+          "dfc-b:street": "2 Chem. des Murailles"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Baron-sur-Odon",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.131679507443266",
+        "dfc-b:longitude": "-0.4850272204227221",
+        "dfc-b:postcode": "14210",
+        "dfc-b:street": "2 Chem. des Murailles"
+      },
+      {
+        "@id": "http://maPlateformeNationale/pickupOption/pickupOptionId4-3",
+        "@type": "dfc-b:PickupOption",
+        "dfc-b:endDate": "2025-01-24T18:00:00+01:00",
+        "dfc-b:pickedUpAt": "http://maPlateformeNationale/physicalPlace/physicalPlaceId4-3",
+        "dfc-b:startDate": "2025-01-17T10:00:00+01:00"
+      },
+      {
+        "@id": "http://maPlateformeNationale/physicalPlace/physicalPlaceId4-3",
+        "@type": "dfc-b:PhysicalPlace",
+        "dfc-b:hasAddress": {
+          "@type": "dfc-b:Address",
+          "dfc-b:city": "Caen",
+          "dfc-b:country": "France",
+          "dfc-b:latitude": "49.18420867439793",
+          "dfc-b:longitude": "-0.37936833168723827",
+          "dfc-b:postcode": "1400",
+          "dfc-b:street": "39 Rue d'Hastings"
+        }
+      },
+      {
+        "@type": "dfc-b:Address",
+        "dfc-b:city": "Caen",
+        "dfc-b:country": "France",
+        "dfc-b:latitude": "49.18420867439793",
+        "dfc-b:longitude": "-0.37936833168723827",
+        "dfc-b:postcode": "1400",
+        "dfc-b:street": "39 Rue d'Hastings"
+      },
+      {
+        "@id": "http://dfc-middleware:3000/ldp/platform/test_v1-13-ville",
+        "@type": "http://static.datafoodconsortium.org/ontologies/DFC_TechnicalOntology.owl#Platform",
+        "rdfs:label": "test v1.13 echelle ville"
+      }
+    ]
+  }
