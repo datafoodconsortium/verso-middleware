@@ -368,14 +368,14 @@ class OptimizationService {
 
         const framed = await jsonld.frame(dfcResult, frame);
 
-        console.log('__framed', JSON.stringify(framed));
+        // console.log('__framed', JSON.stringify(framed));
 
         // const entityWithoutType = dfcResult['@graph'].filter(entity => !entity['@type']);
         // console.log('__entityWithoutType', entityWithoutType);
         // Sort the @graph objects by @type
         dfcResult['@graph'].sort((a, b) => a['@type'].localeCompare(b['@type']));
 
-        console.log('__dfcResult', JSON.stringify(dfcResult));
+        // console.log('__dfcResult', JSON.stringify(dfcResult));
 
 
         return dfcResult;
