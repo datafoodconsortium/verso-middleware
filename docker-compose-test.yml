@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  verso-middleware:
+    image: node:20-slim
+    working_dir: /app
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+    volumes:
+      - .:/app
+      - ../secrets/production/config-verso.json:/app/config.json
+    command: sh -c "yarn install && yarn test"
+    restart: unless-stopped
+    networks:
+      - dfc_shared_network
+
+volumes:
+  node_modules: 
+
+networks:
+  dfc_shared_network:
+    external: true
