@@ -4,7 +4,7 @@ const OptimizationService = require('../src/optimizationService');
 const expectedResults = require('../dataset/results-verso.json');
 const ordersData = require('../dataset/orders-DFC.json');
 const needsData = require('../dataset/needs-verso.json');
-const config = require('../../secrets/production/config-verso.json');
+const config = require('../config.json');
 
 describe('OptimizationService', () => {
     let optimizationService;
