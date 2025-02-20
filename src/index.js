@@ -65,7 +65,7 @@ app.post('/optim', async (req, res, next) => {
     const versoResult = await optimizationService.callVersoOptimization(versoNeeds);
     // console.log('__versoResult', JSON.stringify(versoResult));
     const dfcResult = await optimizationService.transformVersoToDFC(versoResult, dfcNeeds);
-    console.log('__dfcResult', JSON.stringify(dfcResult));
+    // console.log('__dfcResult', JSON.stringify(dfcResult));
     res.json(dfcResult);
   } catch (error) {
     console.error('Error in /optim route:', error);

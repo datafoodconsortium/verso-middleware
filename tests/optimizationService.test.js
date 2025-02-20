@@ -4,17 +4,17 @@ const OptimizationService = require('../src/optimizationService');
 const expectedResults = require('../dataset/results-verso.json');
 const ordersData = require('../dataset/orders-DFC.json');
 const needsData = require('../dataset/needs-verso.json');
+const config = require('../../secrets/production/config-verso.json');
 
 describe('OptimizationService', () => {
     let optimizationService;
     beforeEach(() => {
        // Initialize service with dummy API values
-        optimizationService = new OptimizationService(process.env.VERSO_OPTIM_API_URL, process.env.VERSO_API_KEY);
+        optimizationService = new OptimizationService(config.VERSO_OPTIM_API_URL, config.VERSO_API_KEY);
 
     });
 
     describe('transform DFC to Verso', () => {
-
         it('should transform DFC data to Verso format correctly', async () => {
             // When
             const {versoNeeds, dfcNeeds } = await optimizationService.transformDFCtoVerso(ordersData);
@@ -27,10 +27,7 @@ describe('OptimizationService', () => {
             // expect(versoNeeds).toMatchObject(needsData);
 
             // Check structure of versoNeeds
-
         });
-
-
     });
 
     describe('optimize', () => {

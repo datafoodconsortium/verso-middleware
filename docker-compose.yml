@@ -11,6 +11,7 @@ services:
       - PORT=3001
     volumes:
       - .:/app
+      - ../secrets/production/config-verso.json:/app/config.json
     command: sh -c "yarn install && yarn dev"
     restart: unless-stopped
     networks:
