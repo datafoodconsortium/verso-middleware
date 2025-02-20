@@ -8,6 +8,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const config = require('../config.json');
 
 const OptimizationService = require('./optimizationService.js');
 
@@ -24,8 +25,8 @@ app.use(express.json({ limit: '10mb' })); // Parse JSON bodies with increased si
 
 // Initialize optimization service
 const optimizationService = new OptimizationService(
-  process.env.VERSO_OPTIM_API_URL,
-  process.env.VERSO_API_KEY
+  config.VERSO_OPTIM_API_URL,
+  config.VERSO_API_KEY
 );
 
 // Routes

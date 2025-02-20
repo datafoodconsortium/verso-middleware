@@ -1,4 +1,5 @@
 const jsonld = require('jsonld');
+const config = require('../config.json');
 
 class OptimizationService {
     constructor(apiUrl, apiKey) {
@@ -124,7 +125,7 @@ class OptimizationService {
 
         // console.log('dfcNeeds', JSON.stringify(dfcNeeds));
 
-        let context = await (await fetch(process.env.CONTEXT_JSON_URL)).json();
+        let context = await (await fetch(config.CONTEXT_JSON_URL)).json();
         context = {
             '@context':{
                 ...(context['@context']),
@@ -190,8 +191,8 @@ class OptimizationService {
 
         // Transform routes to DFC graph
         for (const [routeIndex, route] of versoResult.routes.entries()) {
-            const vehicleId = `${process.env.JSONLD_BASE}/vehicle-${route.vehicle}`;
-            const routeId = `${process.env.JSONLD_BASE}/route-${routeIndex}`;
+            const vehicleId = `${config.JSONLD_BASE}/vehicle-${route.vehicle}`;
+            const routeId = `${config.JSONLD_BASE}/route-${routeIndex}`;
 
             const shipments = [];
             const steps = [];
@@ -248,7 +249,7 @@ class OptimizationService {
                         // }
 
                         shipment = {
-                            '@id': `${process.env.JSONLD_BASE}/shipment-${step.id}`,
+                            '@id': `${config.JSONLD_BASE}/shipment-${step.id}`,
                             '@type': 'dfc-b:Shipment',
                             'dfc-b:isChippedIn': vehicleId,
                             'dfc-b:transports': realStock['@id'],
@@ -274,7 +275,7 @@ class OptimizationService {
                 // console.log('__stepShipment', stepShipment);
 
                 const stepDFC = {
-                    '@id': `${process.env.JSONLD_BASE}/step-${routeIndex}-${stepIndex}`,
+                    '@id': `${config.JSONLD_BASE}/step-${routeIndex}-${stepIndex}`,
                     '@type': 'dfc-b:Step',
                     'dfc-b:stepType': step.type,
                     'dfc-b:hasRoute': routeId,
