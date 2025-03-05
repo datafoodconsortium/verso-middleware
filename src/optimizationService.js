@@ -39,12 +39,12 @@ class OptimizationService {
             // console.log('__order', order);
             const physicalPlaceId = order['dfc-b:selects']?.['dfc-b:pickedUpAt']?.['@id']||order['dfc-b:selects']?.['dfc-b:pickedUpAt'];
             // console.log('__physicalPlaceId', physicalPlaceId);
-            const physicalPlace = await jsonld.frame(dfcGraph, {
+            const pickupPhysicalPlace = await jsonld.frame(dfcGraph, {
                 "@context": dfcGraph['@context'],
                 "@id": physicalPlaceId
             });
             // console.log('__physicalPlace', physicalPlace);
-            const pickupAddress = physicalPlace['dfc-b:hasAddress'];
+            const pickupAddress = pickupPhysicalPlace['dfc-b:hasAddress'];
             for (const part of order['dfc-b:hasPart']) {
                 // console.log('__part', part);
                 let partOrigin = dfcGraph['@graph'].find(entity => entity['@id'] === part['@id']);
@@ -59,7 +59,8 @@ class OptimizationService {
                         "@embed": "@never"
                     }
                 });
-                const sourceAddress = physicalProduct?.['dfc-b:constitutedBy']?.['dfc-b:isStoredIn']?.['dfc-b:hasAddress'];
+                const sourcePhysicalPlace = physicalProduct?.['dfc-b:constitutedBy']?.['dfc-b:isStoredIn'];
+                const sourceAddress = sourcePhysicalPlace?.['dfc-b:hasAddress'];
                 // console.log('__sourceAddress', sourceAddress);
                 const pickupId = shipmentIdCounter++;
                 const deliveryId = shipmentIdCounter++;
@@ -81,6 +82,15 @@ class OptimizationService {
                 };
                 versoData.vehicles.push(vehicle);
 
+                let pickupTimeWindow = [Date.parse(pickupPhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:start']), Date.parse(pickupPhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:end'])];  
+                let deliveryTimeWindow = [Date.parse(sourcePhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:start']), Date.parse(sourcePhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:end'])  ];
+
+
+                pickupTimeWindow = pickupTimeWindow.map(time => Math.floor(time / 1000));
+                deliveryTimeWindow = deliveryTimeWindow.map(time => Math.floor(time / 1000));
+                console.log('pickupTimeWindow',pickupTimeWindow);
+                console.log('deliveryTimeWindow',deliveryTimeWindow); 
+
                 // Create shipment
                 const shipment = {
                     pickup: {
@@ -89,7 +99,7 @@ class OptimizationService {
                             parseFloat(sourceAddress['dfc-b:longitude']),
                             parseFloat(sourceAddress['dfc-b:latitude'])
                         ],
-                        time_windows: [[1738796400, 1738810800]], // Fixed time window for example
+                        time_windows: [pickupTimeWindow], // Fixed time window for example
                         service: 1000
                     },
                     delivery: {
@@ -98,7 +108,7 @@ class OptimizationService {
                             parseFloat(pickupAddress['dfc-b:longitude']),
                             parseFloat(pickupAddress['dfc-b:latitude'])
                         ],
-                        time_windows: [[1738796400, 1738810800]], // Fixed time window for example
+                        time_windows: [deliveryTimeWindow], // Fixed time window for example
                         service: 1000
                     }
                 };

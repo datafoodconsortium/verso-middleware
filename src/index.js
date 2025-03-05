@@ -56,17 +56,13 @@ app.post('/optimWhithVersoReturn', async (req, res, next) => {
 app.post('/optim', async (req, res, next) => {
   try {
     const dfcGraph = req.body;
-    // console.log('dfcGraph', dfcGraph);
-    console.log('__dfcGraph', JSON.stringify(dfcGraph));
+
     const {versoNeeds, dfcNeeds } = await optimizationService.transformDFCtoVerso(dfcGraph);
-    // console.log('versoData', versoData);
-    // console.log('needsVerso', needsVerso);
-    // const compare = optimizationService.compareData(versoNeeds, testVersoNeeds);
-    // console.log('__compare', compare);
+
     const versoResult = await optimizationService.callVersoOptimization(versoNeeds);
-    // console.log('__versoResult', JSON.stringify(versoResult));
+
     const dfcResult = await optimizationService.transformVersoToDFC(versoResult, dfcNeeds);
-    // console.log('__dfcResult', JSON.stringify(dfcResult));
+
     res.json(dfcResult);
   } catch (error) {
     console.error('Error in /optim route:', error);
