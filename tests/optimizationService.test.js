@@ -34,9 +34,11 @@ describe('OptimizationService', () => {
         it('should optimize data correctly', async () => {
             // Given
             const {versoNeeds, dfcNeeds } = await optimizationService.transformDFCtoVerso(ordersData);
-            // console.log('__versoNeeds', versoNeeds);
+            // console.log('__versoNeeds', JSON.stringify(versoNeeds));
             // When
             const optimizedResult = await optimizationService.callVersoOptimization(versoNeeds);
+
+            // console.log('__optimizedResult', JSON.stringify(optimizedResult));
             
             // Exclude computing times from the comparison
             const { summary: { computing_times, ...restSummary }, ...restOptimizedResult } = optimizedResult;

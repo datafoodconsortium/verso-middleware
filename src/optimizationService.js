@@ -88,8 +88,8 @@ class OptimizationService {
 
                 pickupTimeWindow = pickupTimeWindow.map(time => Math.floor(time / 1000));
                 deliveryTimeWindow = deliveryTimeWindow.map(time => Math.floor(time / 1000));
-                console.log('pickupTimeWindow',pickupTimeWindow);
-                console.log('deliveryTimeWindow',deliveryTimeWindow); 
+                // console.log('pickupTimeWindow',pickupTimeWindow);
+                // console.log('deliveryTimeWindow',deliveryTimeWindow); 
 
                 // Create shipment
                 const shipment = {
@@ -131,9 +131,6 @@ class OptimizationService {
      */
     async transformVersoToDFC(versoResult, dfcNeeds) {
         // Initialize DFC result structure
-
-
-        // console.log('dfcNeeds', JSON.stringify(dfcNeeds));
 
         let context = await (await fetch(config.CONTEXT_JSON_URL)).json();
         context = {
@@ -180,24 +177,19 @@ class OptimizationService {
             }
         };
 
-
         const dfcWithVersoIdContext = {
             '@context': context['@context'],
             '@graph': dfcNeeds['@graph']
         };
-
-        // const dfcNeedsExpanded = await jsonld.expand(dfcWithVersoIdContext);
 
         const flattened = await jsonld.flatten(dfcWithVersoIdContext, context);
 
         const dfcResult = {
             '@context': context['@context'],
             '@graph': flattened['@graph'],
-
         };
 
         const orderLines = flattened['@graph'].filter(part => part['@type'] === 'dfc-b:OrderLine');
-        // console.log('__orderLines', orderLines[0]);
 
         // Transform routes to DFC graph
         for (const [routeIndex, route] of versoResult.routes.entries()) {
@@ -217,8 +209,6 @@ class OptimizationService {
                     );
 
                     if (orderLine) {
-
-
                         const orderLineFramed = await jsonld.frame(dfcWithVersoIdContext, {
                             "@context": context['@context'],
                             "@id": orderLine['@id'],
@@ -233,8 +223,6 @@ class OptimizationService {
                             }
                         });
 
-                        // console.log('__orderLineFramed', orderLineFramed);
-
                         const realStock = await jsonld.frame(dfcWithVersoIdContext, {
                             "@context": context['@context'],
                             "@id": orderLineFramed['dfc-b:fulfilledBy']['dfc-b:constitutedBy']['@id'],
@@ -246,17 +234,8 @@ class OptimizationService {
                                 "dfc-b:represents": {
                                     "@embed": "@never"
                                 }
-
                             }
                         });   
-                        // delete realStock['@context'];
-
-                        // console.log('__realStock', realStock);
-
-                        // if (Array.isArray(realStock['dfc-b:isStoredIn']['dfc-b:hasAddress'])) {
-                        //     console.log('__realStock', realStock);
-                        //     console.log('__orderLineFramed', orderLineFramed);
-                        // }
 
                         shipment = {
                             '@id': `${config.JSONLD_BASE}/shipment-${step.id}`,
@@ -266,7 +245,6 @@ class OptimizationService {
                             'dfc-b:startAt': realStock['dfc-b:isStoredIn']['dfc-b:hasAddress'],
                             'dfc-b:endAt': orderLineFramed['dfc-b:partOf']['dfc-b:selects']['dfc-b:pickedUpAt']['dfc-b:hasAddress']
                         };
-                        // console.log('__shipment', shipment);
 
                         dfcResult['@graph'].push(shipment);
                         shipments.push(shipment);
@@ -282,7 +260,6 @@ class OptimizationService {
                         }
                     }
                 }
-                // console.log('__stepShipment', stepShipment);
 
                 const stepDFC = {
                     '@id': `${config.JSONLD_BASE}/step-${routeIndex}-${stepIndex}`,
@@ -295,7 +272,6 @@ class OptimizationService {
                     'dfc-b:waiting_time': step.waiting_time,
                     ...stepShipment
                 };
-                // console.log('__stepDFC', stepDFC);
                 dfcResult['@graph'].push(stepDFC);
                 steps.push(stepDFC);
             }
@@ -305,7 +281,6 @@ class OptimizationService {
                 '@type': 'dfc-b:Vehicle',
                 'dfc-b:ships': shipments.map(shipment => shipment['@id'])
             };
-            // console.log('__vehicle', vehicle['@id']);
             dfcResult['@graph'].push(vehicle);
 
             const routeDFC = {
@@ -314,14 +289,9 @@ class OptimizationService {
                 'dfc-b:geometry': route.geometry,
                 'dfc-b:vehicle': vehicleId,
                 'dfc-b:steps': steps.map(step => step['@id'])
-
             };
-            // console.log('__routeDFC', routeDFC['@id']);
             dfcResult['@graph'].push(routeDFC);
         }
-
-
-        // console.log('__dfcResult', JSON.stringify(dfcResult));
 
         const frame = {
             "@context": context['@context'],
@@ -374,20 +344,10 @@ class OptimizationService {
             }
         };
 
-        // console.log('__frame', JSON.stringify(frame));
-
-
         const framed = await jsonld.frame(dfcResult, frame);
 
-        // console.log('__framed', JSON.stringify(framed));
-
-        // const entityWithoutType = dfcResult['@graph'].filter(entity => !entity['@type']);
-        // console.log('__entityWithoutType', entityWithoutType);
         // Sort the @graph objects by @type
         dfcResult['@graph'].sort((a, b) => a['@type'].localeCompare(b['@type']));
-
-        // console.log('__dfcResult', JSON.stringify(dfcResult));
-
 
         return dfcResult;
     }
@@ -398,7 +358,6 @@ class OptimizationService {
      * @returns {Promise<Object>} Optimization result
      */
     async callVersoOptimization(versoData) {
-        // console.log('__versoData', JSON.stringify(versoData));
         const response = await fetch(`${this.apiUrl}?api_key=${this.apiKey}`, {
             method: 'POST',
             headers: {
@@ -412,7 +371,6 @@ class OptimizationService {
 
         return response.json();
     }
-
 
     // Comparer versoData et needsData
     compareData = (versoData, needsData) => {
@@ -460,8 +418,7 @@ class OptimizationService {
         const versoData = this.transformDFCtoVerso(dfcGraph);
 
         const compare = this.compareData(versoData, dfcGraph);
-        // console.log('__compare', compare);
-// 
+
         // Appeler l'API d'optimisation Verso
         const versoResult = await this.callVersoOptimization(versoData);
 
