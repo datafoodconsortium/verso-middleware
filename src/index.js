@@ -57,11 +57,13 @@ app.post('/optim', async (req, res, next) => {
   try {
     const dfcGraph = req.body;
 
+    console.log('__dfcGraph', JSON.stringify(dfcGraph));
     const {versoNeeds, dfcNeeds } = await optimizationService.transformDFCtoVerso(dfcGraph);
 
     const versoResult = await optimizationService.callVersoOptimization(versoNeeds);
 
     const dfcResult = await optimizationService.transformVersoToDFC(versoResult, dfcNeeds);
+    console.log('__dfcResult', JSON.stringify(dfcResult));
 
     res.json(dfcResult);
   } catch (error) {
