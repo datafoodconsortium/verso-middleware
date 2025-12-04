@@ -59,7 +59,7 @@ verso-middleware/
 │   ├── results-verso.json
 │   └── results-DFC.json
 ├── docs/                          # Documentation
-├── .env.example                   # Template configuration
+├── config.example.json            # Template configuration
 ├── config.example.json            # Template configuration JSON
 ├── docker-compose*.yml            # Configurations Docker
 ├── package.json                   # Dépendances et scripts

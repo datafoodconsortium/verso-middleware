@@ -95,7 +95,7 @@ git checkout -b fix/mon-bug
 yarn install
 
 # Configurer
-cp .env.example .env
+cp config.example.json ../secrets/production/config-verso.json
 # Éditer config-verso.json dans @secrets
 
 # Développer en mode watch
