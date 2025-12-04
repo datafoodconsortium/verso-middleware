@@ -45,9 +45,9 @@ app.post('/optimWhithVersoReturn', async (req, res, next) => {
     res.json(dfcResult);
   } catch (error) {
     console.error('Error in /optim route:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Optimization failed',
-      message: error.message 
+      message: error.message
     });
   }
 });
@@ -57,20 +57,20 @@ app.post('/optim', async (req, res, next) => {
   try {
     const dfcGraph = req.body;
 
-    console.log('__dfcGraph', JSON.stringify(dfcGraph));
-    const {versoNeeds, dfcNeeds } = await optimizationService.transformDFCtoVerso(dfcGraph);
+    // console.log('__dfcGraph', JSON.stringify(dfcGraph));
+    const { versoNeeds, dfcNeeds } = await optimizationService.transformDFCtoVerso(dfcGraph);
 
     const versoResult = await optimizationService.callVersoOptimization(versoNeeds);
 
     const dfcResult = await optimizationService.transformVersoToDFC(versoResult, dfcNeeds);
-    console.log('__dfcResult', JSON.stringify(dfcResult));
+    // console.log('__dfcResult', JSON.stringify(dfcResult));
 
     res.json(dfcResult);
   } catch (error) {
     console.error('Error in /optim route:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Optimization failed',
-      message: error.message 
+      message: error.message
     });
   }
 });

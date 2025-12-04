@@ -8,6 +8,33 @@ class OptimizationService {
     }
 
     /**
+     * Clean object by removing @context property recursively
+     * @param {Object} obj - Object to clean
+     * @returns {Object} Cleaned object without @context
+     */
+    cleanObject(obj) {
+        if (obj === null || obj === undefined) {
+            return obj;
+        }
+
+        if (Array.isArray(obj)) {
+            return obj.map(item => this.cleanObject(item));
+        }
+
+        if (typeof obj === 'object') {
+            const cleaned = {};
+            for (const [key, value] of Object.entries(obj)) {
+                if (key !== '@context') {
+                    cleaned[key] = this.cleanObject(value);
+                }
+            }
+            return cleaned;
+        }
+
+        return obj;
+    }
+
+    /**
      * Transform DFC graph data to Verso format
      * @param {Object} dfcGraph - Input DFC graph data
      * @returns {Object} Verso formatted data
@@ -36,19 +63,15 @@ class OptimizationService {
 
 
         for (const order of orders['@graph']) {
-            // console.log('__order', order);
-            const physicalPlaceId = order['dfc-b:selects']?.['dfc-b:pickedUpAt']?.['@id']||order['dfc-b:selects']?.['dfc-b:pickedUpAt'];
-            // console.log('__physicalPlaceId', physicalPlaceId);
+            const physicalPlaceId = order['dfc-b:selects']?.['dfc-b:pickedUpAt']?.['@id'] || order['dfc-b:selects']?.['dfc-b:pickedUpAt'];
             const pickupPhysicalPlace = await jsonld.frame(dfcGraph, {
                 "@context": dfcGraph['@context'],
                 "@id": physicalPlaceId
             });
-            // console.log('__physicalPlace', physicalPlace);
             const pickupAddress = pickupPhysicalPlace['dfc-b:hasAddress'];
             for (const part of order['dfc-b:hasPart']) {
-                // console.log('__part', part);
                 let partOrigin = dfcGraph['@graph'].find(entity => entity['@id'] === part['@id']);
-                const physicalProductId = part['dfc-b:fulfilledBy']?.['@id']||part['dfc-b:fulfilledBy']?.['dfc-b:constitutedBy'];
+                const physicalProductId = part['dfc-b:fulfilledBy']?.['@id'] || part['dfc-b:fulfilledBy']?.['dfc-b:constitutedBy'];
                 const physicalProduct = await jsonld.frame(dfcGraph, {
                     "@context": dfcGraph['@context'],
                     "@id": physicalProductId,
@@ -61,54 +84,94 @@ class OptimizationService {
                 });
                 const sourcePhysicalPlace = physicalProduct?.['dfc-b:constitutedBy']?.['dfc-b:isStoredIn'];
                 const sourceAddress = sourcePhysicalPlace?.['dfc-b:hasAddress'];
-                // console.log('__sourceAddress', sourceAddress);
+
+                // Validate that sourceAddress has valid coordinates
+                if (!sourceAddress || sourceAddress['dfc-b:longitude'] === null || sourceAddress['dfc-b:longitude'] === undefined ||
+                    sourceAddress['dfc-b:latitude'] === null || sourceAddress['dfc-b:latitude'] === undefined) {
+                    console.warn('⚠️  SKIPPING part - sourceAddress missing valid coordinates');
+                    console.warn('sourceAddress', sourceAddress);
+                    continue;
+                }
+
                 const pickupId = shipmentIdCounter++;
                 const deliveryId = shipmentIdCounter++;
                 partOrigin['pickupShipmentId'] = pickupId;
                 partOrigin['deliveryShipmentId'] = deliveryId;
 
+                // Parse coordinates - ensure they are valid numbers
+                const sourceLongitude = parseFloat(sourceAddress['dfc-b:longitude']);
+                const sourceLatitude = parseFloat(sourceAddress['dfc-b:latitude']);
 
-                 // Create vehicle
-                 const vehicle = {
+                if (isNaN(sourceLongitude) || isNaN(sourceLatitude)) {
+                    console.warn('⚠️  SKIPPING part - invalid coordinate values');
+                    continue;
+                }
+
+                // Create vehicle
+                const vehicle = {
                     id: vehicleId++,
-                    start: [
-                        parseFloat(sourceAddress['dfc-b:longitude']),
-                        parseFloat(sourceAddress['dfc-b:latitude'])
-                    ],
-                    end: [
-                        parseFloat(sourceAddress['dfc-b:longitude']),
-                        parseFloat(sourceAddress['dfc-b:latitude'])
-                    ]
+                    start: [sourceLongitude, sourceLatitude],
+                    end: [sourceLongitude, sourceLatitude]
                 };
                 versoData.vehicles.push(vehicle);
 
-                let pickupTimeWindow = [Date.parse(pickupPhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:start']), Date.parse(pickupPhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:end'])];  
-                let deliveryTimeWindow = [Date.parse(sourcePhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:start']), Date.parse(sourcePhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:end'])  ];
+                // Validate pickupAddress has valid coordinates
+                if (!pickupAddress || pickupAddress['dfc-b:longitude'] === null || pickupAddress['dfc-b:longitude'] === undefined ||
+                    pickupAddress['dfc-b:latitude'] === null || pickupAddress['dfc-b:latitude'] === undefined) {
+                    console.warn('⚠️  SKIPPING shipment - pickupAddress missing valid coordinates',);
+                    continue;
+                }
 
+                const pickupLongitude = parseFloat(pickupAddress['dfc-b:longitude']);
+                const pickupLatitude = parseFloat(pickupAddress['dfc-b:latitude']);
 
-                pickupTimeWindow = pickupTimeWindow.map(time => Math.floor(time / 1000));
-                deliveryTimeWindow = deliveryTimeWindow.map(time => Math.floor(time / 1000));
-                // console.log('pickupTimeWindow',pickupTimeWindow);
-                // console.log('deliveryTimeWindow',deliveryTimeWindow); 
+                if (isNaN(pickupLongitude) || isNaN(pickupLatitude)) {
+                    console.warn('⚠️  SKIPPING shipment - invalid pickup coordinate values');
+                    continue;
+                }
+
+                // Parse time windows with validation
+                let pickupTimeWindow = null;
+                let deliveryTimeWindow = null;
+
+                try {
+                    if (pickupPhysicalPlace?.['dfc-b:isOpeningDuring']?.['dfc-b:start'] && pickupPhysicalPlace?.['dfc-b:isOpeningDuring']?.['dfc-b:end']) {
+                        pickupTimeWindow = [
+                            Math.floor(Date.parse(pickupPhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:start']) / 1000),
+                            Math.floor(Date.parse(pickupPhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:end']) / 1000)
+                        ];
+                    } else {
+                        console.warn('⚠️  Missing pickup time window');
+                        pickupTimeWindow = [null, null];
+                    }
+
+                    if (sourcePhysicalPlace?.['dfc-b:isOpeningDuring']?.['dfc-b:start'] && sourcePhysicalPlace?.['dfc-b:isOpeningDuring']?.['dfc-b:end']) {
+                        deliveryTimeWindow = [
+                            Math.floor(Date.parse(sourcePhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:start']) / 1000),
+                            Math.floor(Date.parse(sourcePhysicalPlace['dfc-b:isOpeningDuring']['dfc-b:end']) / 1000)
+                        ];
+                    } else {
+                        console.warn('⚠️  Missing delivery time window');
+                        deliveryTimeWindow = [null, null];
+                    }
+                } catch (e) {
+                    console.warn('⚠️  Error parsing time windows');
+                    pickupTimeWindow = [null, null];
+                    deliveryTimeWindow = [null, null];
+                }
 
                 // Create shipment
                 const shipment = {
                     pickup: {
                         id: pickupId,
-                        location: [
-                            parseFloat(sourceAddress['dfc-b:longitude']),
-                            parseFloat(sourceAddress['dfc-b:latitude'])
-                        ],
-                        time_windows: [pickupTimeWindow], // Fixed time window for example
+                        location: [sourceLongitude, sourceLatitude],
+                        time_windows: [pickupTimeWindow],
                         service: 1000
                     },
                     delivery: {
                         id: deliveryId,
-                        location: [
-                            parseFloat(pickupAddress['dfc-b:longitude']),
-                            parseFloat(pickupAddress['dfc-b:latitude'])
-                        ],
-                        time_windows: [deliveryTimeWindow], // Fixed time window for example
+                        location: [pickupLongitude, pickupLatitude],
+                        time_windows: [deliveryTimeWindow],
                         service: 1000
                     }
                 };
@@ -134,7 +197,7 @@ class OptimizationService {
 
         let context = await (await fetch(config.CONTEXT_JSON_URL)).json();
         context = {
-            '@context':{
+            '@context': {
                 ...(context['@context']),
                 "pickupShipmentId": {
                     "@id": "https://example.org/pickupShipmentId",
@@ -204,7 +267,7 @@ class OptimizationService {
                 let stepShipment;
 
                 if (step.type === 'pickup' || step.type === 'delivery') {
-                    const orderLine = orderLines.find(orderLine  =>
+                    const orderLine = orderLines.find(orderLine =>
                         orderLine.pickupShipmentId === step.id || orderLine.deliveryShipmentId === step.id
                     );
 
@@ -235,7 +298,7 @@ class OptimizationService {
                                     "@embed": "@never"
                                 }
                             }
-                        });   
+                        });
 
                         shipment = {
                             '@id': `${config.JSONLD_BASE}/shipment-${step.id}`,
@@ -248,7 +311,7 @@ class OptimizationService {
 
                         dfcResult['@graph'].push(shipment);
                         shipments.push(shipment);
-                        
+
                         if (step.type === 'pickup') {
                             stepShipment = {
                                 'dfc-b:pickup': shipment['@id']
@@ -366,6 +429,18 @@ class OptimizationService {
             body: JSON.stringify(versoData)
         });
         if (!response.ok) {
+            console.error('Verso optimization API error response:', {
+                status: response.status,
+                statusText: response.statusText,
+                body: await response.text()
+            });
+            // Log a curl command to reproduce the failed request
+            const requestBody = JSON.stringify(versoData);
+            const curlCommand = `curl -X POST "${this.apiUrl}?api_key=${this.apiKey}" \\\n  -H "Content-Type: application/json" \\\n  -d '${requestBody}'`;
+            const errorBody = await response.text();
+            console.error('Verso optimization API returned status:', response.status);
+            console.error('Response body:', errorBody);
+            console.error('Curl command to reproduce the error:\n', curlCommand);
             throw new Error(`Verso optimization failed: ${response.statusText}`);
         }
 
