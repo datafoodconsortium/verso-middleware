@@ -77,7 +77,9 @@ curl -X POST http://localhost:3001/optim \
 
 ## 🚀 3. Déployer le Service (Gestionnaires)
 
-### Installation avec Docker (Recommandé)
+### Installation avec Docker
+
+**⚠️ Méthode recommandée et requise**
 
 ```bash
 # 1. Créer la configuration
@@ -88,29 +90,17 @@ cp config.example.json ../secrets/production/config-verso.json
 # 2. Créer le réseau Docker
 docker network create dfc_shared_network
 
-# 3. Démarrer
+# 3. Démarrer en production
 docker-compose -f docker-compose-prod.yml up -d
 
 # 4. Vérifier
 curl http://localhost:3001/health
 ```
 
-### Installation Manuelle
-
-```bash
-# 1. Prérequis : Node.js 20+
-node --version
-
-# 2. Installation
-yarn install --production
-
-# 3. Configuration
-cp config.example.json config.json
-# Éditer config.json avec votre clé API Verso
-
-# 4. Démarrer
-yarn start
-```
+**Environnements disponibles :**
+- `docker-compose.yml` - Développement (auto-reload)
+- `docker-compose-test.yml` - Tests
+- `docker-compose-prod.yml` - Production
 
 ### Configuration Requise
 
@@ -170,21 +160,24 @@ src/
 
 ### Développement Local
 
+**Utiliser Docker Compose :**
+
 ```bash
-# Installation dev
-yarn install
+# 1. Configuration
+mkdir -p ../secrets/production
+cp config.example.json ../secrets/production/config-verso.json
+# Éditer avec votre clé API Verso
 
-# Configuration
-cp .env.example .env
-# Éditer .env avec votre clé API Verso
+# 2. Créer le réseau (une seule fois)
+docker network create dfc_shared_network
 
-# Démarrer en mode dev (auto-reload)
-yarn dev
+# 3. Démarrer en mode développement (auto-reload)
+docker-compose up
 
-# Tester
-yarn test
+# 4. Lancer les tests
+docker-compose -f docker-compose-test.yml up
 
-# Tester avec des données d'exemple
+# 5. Tester avec des données d'exemple
 curl -X POST http://localhost:3001/optim \
   -H "Content-Type: application/json" \
   -d @dataset/orders-DFC.json

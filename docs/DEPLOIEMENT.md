@@ -4,44 +4,24 @@ Guide pour déployer le Verso Middleware en production.
 
 ---
 
-## Choix de la Méthode de Déploiement
+## Méthode de Déploiement
 
-### Option 1 : Docker (Recommandée)
+### Docker Compose (Requis)
 
-**✅ Avantages :**
-- Installation simplifiée
-- Environnement isolé
-- Gestion facile des versions
-- Redémarrage automatique
+**⚠️ Tous les environnements utilisent Docker Compose**
 
 **📋 Prérequis :**
 - Docker 20+
 - Docker Compose 1.29+
 - Clé API Verso valide
+- Réseau Docker `dfc_shared_network`
 
-**🎯 Idéal pour :**
-- Serveurs dédiés
-- Infrastructure existante Docker
-- Déploiement rapide
-
----
-
-### Option 2 : Installation Manuelle
-
-**✅ Avantages :**
-- Contrôle total
-- Pas de dépendance Docker
-- Intégration système classique
-
-**📋 Prérequis :**
-- Node.js 20+
-- Gestionnaire de processus (PM2)
-- Clé API Verso valide
-
-**🎯 Idéal pour :**
-- Serveurs sans Docker
-- Intégration dans infrastructure existante
-- Besoins de personnalisation avancée
+**🎯 Avantages :**
+- Configuration standardisée
+- Environnement isolé
+- Gestion automatique des dépendances
+- Réseau partagé avec autres services DFC
+- Redémarrage automatique
 
 ---
 
@@ -93,23 +73,25 @@ Le middleware nécessite 4 paramètres essentiels :
 
 ---
 
-## Déploiement avec Docker
+## Déploiement avec Docker Compose
 
-### Architecture Docker
+### Fichiers Docker Compose
 
-**Fichiers fournis :**
-- `docker-compose.yml` - Développement
-- `docker-compose-prod.yml` - Production
-- `docker-compose-test.yml` - Tests
+| Fichier | Usage | Commande |
+|---------|-------|----------|
+| `docker-compose.yml` | **Développement** (auto-reload) | `yarn dev` |
+| `docker-compose-test.yml` | **Tests** | `yarn test` |
+| `docker-compose-prod.yml` | **Production** | `yarn start` |
 
-**Le système utilise :**
-- Image Node.js 20 Alpine (légère)
-- Volume pour la configuration externe
-- Réseau Docker partagé avec autres services DFC
+**Configuration commune :**
+- Image : `node:20-slim`
+- Port : `3001`
+- Configuration : Montée depuis `../secrets/production/config-verso.json`
+- Réseau : `dfc_shared_network` (externe, partagé)
 
 ---
 
-### Étapes de Déploiement
+### Étapes de Déploiement en Production
 
 #### 1. Préparer la Configuration
 
@@ -152,95 +134,17 @@ Utiliser Docker Compose avec le fichier de production (`docker-compose-prod.yml`
 
 **Opérations courantes :**
 
-| Action | Commande Docker Compose |
-|--------|-------------------------|
-| Démarrer | `up -d` |
-| Arrêter | `down` |
-| Redémarrer | `restart` |
-| Voir les logs | `logs -f` |
-| Voir le statut | `ps` |
+| Action | Commande |
+|--------|----------|
+| **Production** | `docker-compose -f docker-compose-prod.yml up -d` |
+| **Développement** | `docker-compose up` |
+| **Tests** | `docker-compose -f docker-compose-test.yml up` |
+| Arrêter | `docker-compose -f docker-compose-prod.yml down` |
+| Redémarrer | `docker-compose -f docker-compose-prod.yml restart` |
+| Voir les logs | `docker-compose -f docker-compose-prod.yml logs -f` |
+| Voir le statut | `docker-compose -f docker-compose-prod.yml ps` |
 
 **Référence :** Documentation officielle Docker Compose
-
----
-
-## Déploiement Manuel
-
-### Installation de l'Environnement
-
-#### 1. Node.js 20
-
-**Vérifier la version installée :**
-Commande : `node --version`
-
-Si version < 20, installer Node.js 20+ selon votre distribution Linux.
-
-**Référence :** https://nodejs.org/
-
-#### 2. Gestionnaire de Paquets
-
-Yarn est recommandé (ou npm fonctionne aussi).
-
-#### 3. PM2 (Process Manager)
-
-**Rôle de PM2 :**
-- Maintenir le processus actif
-- Redémarrage automatique en cas de crash
-- Gestion des logs
-- Démarrage automatique au boot
-
-**Installation :** Via npm global
-
----
-
-### Installation du Middleware
-
-#### 1. Récupérer le Code
-
-Cloner le dépôt ou télécharger l'archive.
-
-#### 2. Installer les Dépendances
-
-**En production :**
-Installer uniquement les dépendances de production (flag `--production`).
-
-**Dépendances installées :**
-- express, cors, helmet, morgan (serveur web)
-- jsonld (traitement JSON-LD)
-- node-fetch (client HTTP)
-- dotenv (configuration)
-
-**Référence :** Voir `package.json` pour la liste complète
-
-#### 3. Configurer
-
-Créer le fichier `config.json` à la racine du projet avec vos paramètres.
-
-**Alternative :** Utiliser un fichier `.env` (copier depuis `.env.example`)
-
-#### 4. Démarrer avec PM2
-
-**Configuration PM2 :**
-Le fichier d'entrée est `src/index.js`.
-
-**PM2 va :**
-- Lancer le processus
-- Le surveiller
-- Redémarrer automatiquement en cas d'erreur
-
-**Référence :** Documentation PM2 pour options avancées
-
----
-
-### Configuration du Démarrage Automatique
-
-**Objectif :** Le middleware doit redémarrer après un reboot du serveur.
-
-**Étapes :**
-1. Configurer PM2 pour le démarrage automatique (une seule fois)
-2. Sauvegarder la liste des processus PM2
-
-**Référence :** Commandes PM2 `startup` et `save`
 
 ---
 

@@ -28,18 +28,18 @@ Guide pour les développeurs souhaitant contribuer ou maintenir le projet.
    - Forker le projet sur GitHub (si contribution)
    - Cloner localement
 
-2. **Installer les dépendances**
-   - Commande : `yarn install`
-   - Installe toutes les dépendances (prod + dev)
-
-3. **Créer la configuration**
-   - Copier `.env.example` vers `.env`
+2. **Créer la configuration**
+   - `mkdir -p ../secrets/production`
+   - `cp config.example.json ../secrets/production/config-verso.json`
    - Renseigner la clé API Verso (nécessaire pour tests réels)
 
+3. **Créer le réseau Docker (une seule fois)**
+   - `docker network create dfc_shared_network`
+
 4. **Vérifier l'installation**
-   - Lancer les tests : `yarn test`
-   - Démarrer le serveur : `yarn dev`
+   - Démarrer : `docker-compose up`
    - Tester : `curl http://localhost:3001/health`
+   - Tests : `docker-compose -f docker-compose-test.yml up`
 
 ---
 
@@ -147,13 +147,13 @@ verso-middleware/
 ```
 1. Créer une branche feature
    ↓
-2. Développer en mode watch (yarn dev)
+2. Développer en mode watch (docker-compose up)
    ↓
 3. Tester manuellement (curl, Postman)
    ↓
 4. Écrire/ajuster tests unitaires
    ↓
-5. Vérifier que tests passent (yarn test)
+5. Vérifier que tests passent (docker-compose -f docker-compose-test.yml up)
    ↓
 6. Commiter avec message conventionnel
    ↓
@@ -162,30 +162,36 @@ verso-middleware/
 
 ---
 
-### Mode Développement
+### Mode Développement avec Docker Compose
 
-**Commande :** `yarn dev`
+**Commandes :**
 
-**Ce que ça fait :**
-- Lance Nodemon (auto-reload)
-- Recharge le serveur à chaque modification
-- Affiche les logs en temps réel
+| Action | Commande |
+|--------|----------|
+| **Démarrer en dev** | `docker-compose up` |
+| **Lancer les tests** | `docker-compose -f docker-compose-test.yml up` |
+| **Arrêter** | `docker-compose down` |
+| **Voir les logs** | `docker-compose logs -f` |
+
+**Environnements :**
+- `docker-compose.yml` → `yarn dev` (auto-reload avec nodemon)
+- `docker-compose-test.yml` → `yarn test` (Jest)
+- `docker-compose-prod.yml` → `yarn start` (production)
 
 **Utilisation :**
 - Modifier le code dans `src/`
 - Sauvegarder
-- Serveur redémarre automatiquement
+- Le conteneur recharge automatiquement (mode dev)
 - Tester vos changements
 
 ---
 
 ### Tests Unitaires
 
-**Commande :** `yarn test`
-
-**Options utiles :**
-- `yarn test --watch` - Mode watch (relance à chaque modif)
-- `yarn test --coverage` - Rapport de couverture
+**Avec Docker Compose :**
+```bash
+docker-compose -f docker-compose-test.yml up
+```
 
 **Bonnes pratiques :**
 - ✅ Tester les cas nominaux
@@ -196,6 +202,11 @@ verso-middleware/
 ---
 
 ### Tests Manuels
+
+**S'assurer que le service tourne :**
+```bash
+docker-compose up -d
+```
 
 **Avec les données d'exemple :**
 ```bash
@@ -208,6 +219,11 @@ curl -X POST http://localhost:3001/optim \
 1. Créer un fichier JSON avec votre graphe DFC
 2. Tester la transformation : `/optimWhithVersoReturn`
 3. Tester l'optimisation complète : `/optim`
+
+**Arrêter après les tests :**
+```bash
+docker-compose down
+```
 
 ---
 
