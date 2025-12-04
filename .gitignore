@@ -49,3 +49,6 @@ config.json
 .yarn/
 .yarnrc.yml
 yarn.lock
+
+# HTML exports
+*.html

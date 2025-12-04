@@ -1,0 +1,7 @@
+{
+  "VERSO_OPTIM_API_URL": "https://api.verso-optim.com/vrp/v1/solve",
+  "VERSO_API_KEY": "your-verso-api-key-here",
+  "CONTEXT_JSON_URL": "https://cdn.jsdelivr.net/gh/datafoodconsortium/business-api@main/context.json",
+  "JSONLD_BASE": "http://verso-middleware.org"
+}
+
