@@ -2,7 +2,7 @@
 
 Middleware permettant l'optimisation logistique de commandes au format [Data Food Consortium (DFC)](https://datafoodconsortium.org/) via l'API [Verso](https://verso-optim.com/).
 
-**📖 Documentation :** [Français](README.md) | [English](README-en.md) *(coming soon)*
+**📖 Documentation :** [Français](README.md) | [English](docs/README-en.md)
 
 ---
 
