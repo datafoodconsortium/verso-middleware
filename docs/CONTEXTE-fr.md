@@ -285,6 +285,7 @@ Le middleware Verso prouve qu'il est possible de :
 
 **Pour plus d'informations :**  
 - [README principal](../README.md)
-- [Architecture technique](ARCHITECTURE.md)
-- [Guide API](API.md)
+- [Architecture technique](ARCHITECTURE-fr.md)
+- [Guide API](API-fr.md)
+
 

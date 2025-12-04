@@ -2,6 +2,8 @@
 
 Middleware permettant l'optimisation logistique de commandes au format [Data Food Consortium (DFC)](https://datafoodconsortium.org/) via l'API [Verso](https://verso-optim.com/).
 
+**📖 Documentation :** [Français](README.md) | [English](README-en.md) *(coming soon)*
+
 ---
 
 ## 🎯 1. Principe et Usage Fonctionnel
@@ -31,7 +33,7 @@ Commandes DFC (JSON-LD)  →  Middleware Verso  →  Routes optimisées DFC (JSO
 3. Verso calcule les **routes optimisées**
 4. Le middleware renvoie le résultat **au format DFC enrichi** (routes, véhicules, étapes)
 
-**📖 Plus de détails :** [Comprendre le fonctionnement](docs/PRINCIPE.md)
+**📖 Plus de détails :** [Comprendre le fonctionnement](docs/PRINCIPE-fr.md) | [🇬🇧 English](docs/PRINCIPLE-en.md)
 
 ---
 
@@ -69,9 +71,9 @@ curl -X POST http://localhost:3001/optim \
 - `Shipment` - Envois/livraisons
 - `Step` - Étapes de chaque route
 
-**📖 Documentation complète :** [Guide API](docs/API.md)
+**📖 Documentation complète :** [Guide API](docs/API-fr.md) | [🇬🇧 English](docs/API-en.md)
 
-**📦 Exemples de données :** [Exemples](docs/EXEMPLES.md)
+**📦 Exemples de données :** [Exemples](docs/EXEMPLES-fr.md) | [🇬🇧 English](docs/EXAMPLES-en.md)
 
 ---
 
@@ -120,7 +122,7 @@ curl http://localhost:3001/health
 - Montée comme volume Docker dans `/app/config.json`
 - Ne jamais committer dans le dépôt public
 
-**📖 Guide complet :** [Déploiement](docs/DEPLOIEMENT.md)
+**📖 Guide complet :** [Déploiement](docs/DEPLOIEMENT-fr.md) | [🇬🇧 English](docs/DEPLOYMENT-en.md)
 
 ---
 
@@ -202,10 +204,10 @@ curl -X POST http://localhost:3001/optim \
 
 | Document | Contenu |
 |----------|---------|
-| [Architecture](docs/ARCHITECTURE.md) | Architecture détaillée du système |
-| [Transformations](docs/TRANSFORMATIONS.md) | Logique DFC ↔ Verso en détail |
-| [Développement](docs/DEVELOPPEMENT.md) | Guide complet pour développeurs |
-| [Contribuer](docs/CONTRIBUER.md) | Comment contribuer au projet |
+| [Architecture](docs/ARCHITECTURE-fr.md) \| [🇬🇧](docs/ARCHITECTURE-en.md) | Architecture détaillée du système |
+| [Transformations](docs/TRANSFORMATIONS-fr.md) \| [🇬🇧](docs/TRANSFORMATIONS-en.md) | Logique DFC ↔ Verso en détail |
+| [Développement](docs/DEVELOPPEMENT-fr.md) \| [🇬🇧](docs/DEVELOPMENT-en.md) | Guide complet pour développeurs |
+| [Contribuer](docs/CONTRIBUER-fr.md) \| [🇬🇧](docs/CONTRIBUTING-en.md) | Comment contribuer au projet |
 
 ---
 
@@ -215,15 +217,17 @@ curl -X POST http://localhost:3001/optim \
 
 | Rôle | Documents |
 |------|-----------|
-| 🎯 **Utilisateur** | [Principe](docs/PRINCIPE.md) · [API](docs/API.md) · [Exemples](docs/EXEMPLES.md) |
-| 🚀 **Gestionnaire** | [Déploiement](docs/DEPLOIEMENT.md) · [Configuration](docs/DEPLOIEMENT.md#configuration) |
-| 💻 **Développeur** | [Architecture](docs/ARCHITECTURE.md) · [Transformations](docs/TRANSFORMATIONS.md) · [Développement](docs/DEVELOPPEMENT.md) |
+| 🎯 **Utilisateur** | [Principe](docs/PRINCIPE-fr.md) · [API](docs/API-fr.md) · [Exemples](docs/EXEMPLES-fr.md) |
+| 🚀 **Gestionnaire** | [Déploiement](docs/DEPLOIEMENT-fr.md) · [Configuration](docs/DEPLOIEMENT-fr.md#configuration) |
+| 💻 **Développeur** | [Architecture](docs/ARCHITECTURE-fr.md) · [Transformations](docs/TRANSFORMATIONS-fr.md) · [Développement](docs/DEVELOPPEMENT-fr.md) |
+
+**🇬🇧 English versions available** - Each document has an English version (suffix `-en.md`)
 
 ### Documents Complémentaires
 
-- [Contexte du projet (FR)](docs/CONTEXTE.md) - Objectifs et expérimentation DFC
-- [Changelog](docs/CHANGELOG.md) - Historique des versions
-- [Contribuer](docs/CONTRIBUER.md) - Guide de contribution
+- [Contexte du projet](docs/CONTEXTE-fr.md) | [🇬🇧](docs/CONTEXT-en.md) - Objectifs et expérimentation DFC
+- [Changelog](docs/CHANGELOG-fr.md) | [🇬🇧](docs/CHANGELOG-en.md) - Historique des versions
+- [Contribuer](docs/CONTRIBUER-fr.md) | [🇬🇧](docs/CONTRIBUTING-en.md) - Guide de contribution
 
 ---
 

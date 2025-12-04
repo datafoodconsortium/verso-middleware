@@ -279,7 +279,7 @@ Configurer un rate limiting au niveau Nginx ou dans le middleware (express-rate-
 
 **PM2 :** Redémarrer le processus
 
-**Important :** Consulter le [CHANGELOG](CHANGELOG.md) avant toute mise à jour (breaking changes ?)
+**Important :** Consulter le [CHANGELOG](CHANGELOG-fr.md) avant toute mise à jour (breaking changes ?)
 
 ---
 
@@ -368,8 +368,8 @@ Avant de mettre en production, vérifier :
 ### Documentation
 
 - **Configuration :** `config.example.json`
-- **Architecture :** [docs/ARCHITECTURE.md](ARCHITECTURE.md)
-- **API :** [docs/API.md](API.md)
+- **Architecture :** [docs/ARCHITECTURE-fr.md](ARCHITECTURE-fr.md)
+- **API :** [docs/API-fr.md](API-fr.md)
 
 ### Communauté
 

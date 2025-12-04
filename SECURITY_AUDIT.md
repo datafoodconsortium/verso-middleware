@@ -123,3 +123,4 @@ cat .gitignore | grep -E '(\.env|config\.json|\.html)'
 
 **Le dépôt est maintenant sécurisé et prêt pour publication publique ! 🎉**
 
+

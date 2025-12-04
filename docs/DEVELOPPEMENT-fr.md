@@ -340,9 +340,9 @@ try {
 
 **Documentation à mettre à jour :**
 - README si feature majeure
-- `docs/API.md` si endpoint modifié
-- `docs/ARCHITECTURE.md` si architecture impactée
-- `docs/CHANGELOG.md` obligatoire
+- `docs/API-fr.md` si endpoint modifié
+- `docs/ARCHITECTURE-fr.md` si architecture impactée
+- `docs/CHANGELOG-fr.md` obligatoire
 
 ---
 
@@ -505,7 +505,7 @@ refactor: simplify coordinate extraction
 - [ ] Commits propres et atomiques
 
 **Template PR :**
-Voir [docs/CONTRIBUER.md](CONTRIBUER.md) pour le template complet
+Voir [docs/CONTRIBUER-fr.md](CONTRIBUER-fr.md) pour le template complet
 
 ---
 
@@ -555,10 +555,10 @@ Voir [docs/CONTRIBUER.md](CONTRIBUER.md) pour le template complet
 
 ### Documentation Interne
 
-- **Architecture :** [docs/ARCHITECTURE.md](ARCHITECTURE.md)
-- **Transformations :** [docs/TRANSFORMATIONS.md](TRANSFORMATIONS.md)
-- **API :** [docs/API.md](API.md)
-- **Contribution :** [docs/CONTRIBUER.md](CONTRIBUER.md)
+- **Architecture :** [docs/ARCHITECTURE-fr.md](ARCHITECTURE-fr.md)
+- **Transformations :** [docs/TRANSFORMATIONS-fr.md](TRANSFORMATIONS-fr.md)
+- **API :** [docs/API-fr.md](API-fr.md)
+- **Contribution :** [docs/CONTRIBUER-fr.md](CONTRIBUER-fr.md)
 
 ### Documentation Externe
 
@@ -581,7 +581,7 @@ Voir [docs/CONTRIBUER.md](CONTRIBUER.md) pour le template complet
 - Issues : [GitHub Issues](../../issues)
 
 **Contribution :**
-- Lire [docs/CONTRIBUER.md](CONTRIBUER.md)
+- Lire [docs/CONTRIBUER-fr.md](CONTRIBUER-fr.md)
 - Proposer des features via Issues
 - Soumettre des Pull Requests
 

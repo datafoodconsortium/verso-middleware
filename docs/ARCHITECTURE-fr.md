@@ -420,7 +420,7 @@ Création Vehicle, Route, Shipment, Step
 - Load balancing
 - Optimisation incrémentale (réutilisation résultats précédents)
 
-**Référence :** Section "Évolutions" dans [docs/CONTEXTE.md](CONTEXTE.md)
+**Référence :** Section "Évolutions" dans [docs/CONTEXTE-fr.md](CONTEXTE-fr.md)
 
 ---
 
@@ -455,7 +455,7 @@ Création Vehicle, Route, Shipment, Step
 - Restreindre CORS aux domaines autorisés
 - Logger les accès pour audit
 
-**Référence :** Section Sécurité dans [docs/DEPLOIEMENT.md](DEPLOIEMENT.md)
+**Référence :** Section Sécurité dans [docs/DEPLOIEMENT-fr.md](DEPLOIEMENT-fr.md)
 
 ---
 
@@ -519,7 +519,7 @@ API Gateway → Auth Service
 - Monitoring granulaire
 - Optimisation asynchrone
 
-**Référence :** Discussion dans [docs/CONTEXTE.md](CONTEXTE.md)
+**Référence :** Discussion dans [docs/CONTEXTE-fr.md](CONTEXTE-fr.md)
 
 ---
 
@@ -529,7 +529,7 @@ API Gateway → Auth Service
 
 - **Code source :** Dossier `src/`
 - **Tests :** Dossier `tests/`
-- **Transformations détaillées :** [docs/TRANSFORMATIONS.md](TRANSFORMATIONS.md)
+- **Transformations détaillées :** [docs/TRANSFORMATIONS-fr.md](TRANSFORMATIONS-fr.md)
 
 ### Standards et Spécifications
 
@@ -541,4 +541,4 @@ API Gateway → Auth Service
 ### Support
 
 - **Issues :** [GitHub Issues](../../issues)
-- **Développement :** [docs/DEVELOPPEMENT.md](DEVELOPPEMENT.md)
+- **Développement :** [docs/DEVELOPPEMENT-fr.md](DEVELOPPEMENT-fr.md)

@@ -45,15 +45,15 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 - Dataset d'exemple dans `dataset/`
 - Documentation complète :
   - README restructuré par rôle
-  - Guide fonctionnel (PRINCIPE.md)
-  - Guide API (API.md)
-  - Exemples pratiques (EXEMPLES.md)
-  - Guide déploiement (DEPLOIEMENT.md)
-  - Architecture détaillée (ARCHITECTURE.md)
-  - Transformations détaillées (TRANSFORMATIONS.md)
-  - Guide développement (DEVELOPPEMENT.md)
-  - Guide contribution (CONTRIBUER.md)
-  - Contexte projet (CONTEXTE.md)
+  - Guide fonctionnel (PRINCIPE-fr.md)
+  - Guide API (API-fr.md)
+  - Exemples pratiques (EXEMPLES-fr.md)
+  - Guide déploiement (DEPLOIEMENT-fr.md)
+  - Architecture détaillée (ARCHITECTURE-fr.md)
+  - Transformations détaillées (TRANSFORMATIONS-fr.md)
+  - Guide développement (DEVELOPPEMENT-fr.md)
+  - Guide contribution (CONTRIBUER-fr.md)
+  - Contexte projet (CONTEXTE-fr.md)
 
 ### Changed
 - N/A (première version)

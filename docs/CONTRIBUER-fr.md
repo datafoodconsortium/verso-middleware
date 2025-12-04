@@ -309,15 +309,15 @@ yarn test --coverage
 
 **Si votre PR change :**
 
-- **API** → Mettre à jour [docs/API.md](API.md)
-- **Architecture** → Mettre à jour [docs/ARCHITECTURE.md](ARCHITECTURE.md)
-- **Transformations** → Mettre à jour [docs/TRANSFORMATIONS.md](TRANSFORMATIONS.md)
-- **Configuration** → Mettre à jour [docs/DEPLOIEMENT.md](DEPLOIEMENT.md)
+- **API** → Mettre à jour [docs/API-fr.md](API-fr.md)
+- **Architecture** → Mettre à jour [docs/ARCHITECTURE-fr.md](ARCHITECTURE-fr.md)
+- **Transformations** → Mettre à jour [docs/TRANSFORMATIONS-fr.md](TRANSFORMATIONS-fr.md)
+- **Configuration** → Mettre à jour [docs/DEPLOIEMENT-fr.md](DEPLOIEMENT-fr.md)
 - **README** → Mettre à jour si impact majeur
 
 ### CHANGELOG.md
 
-**Toujours mettre à jour** [docs/CHANGELOG.md](CHANGELOG.md) :
+**Toujours mettre à jour** [docs/CHANGELOG-fr.md](CHANGELOG-fr.md) :
 
 ```markdown
 ## [Unreleased]
@@ -365,7 +365,7 @@ yarn test --coverage
 git checkout -b release/1.2.0
 
 # Mettre à jour le CHANGELOG
-nano docs/CHANGELOG.md
+nano docs/CHANGELOG-fr.md
 # Remplacer [Unreleased] par [1.2.0] - 2024-12-05
 
 # Mettre à jour package.json

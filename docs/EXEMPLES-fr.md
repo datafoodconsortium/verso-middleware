@@ -272,7 +272,7 @@ Un graphe DFC enrichi contenant vos données originales + les nouvelles entités
 2. Ou créer plusieurs OrderLines (une par créneau)
 3. Ou post-traiter les résultats pour vérifier la compatibilité
 
-**Évolution future :** Support des time windows multiples (voir [docs/CONTEXTE.md](CONTEXTE.md))
+**Évolution future :** Support des time windows multiples (voir [docs/CONTEXTE-fr.md](CONTEXTE-fr.md))
 
 ---
 
@@ -286,7 +286,7 @@ Un graphe DFC enrichi contenant vos données originales + les nouvelles entités
 3. **Pré-clustering :** Regrouper les commandes proches avant optimisation
 4. **Timeout adapté :** Augmenter le timeout de votre client HTTP
 
-**Référence :** Les performances sont documentées dans [docs/ARCHITECTURE.md](ARCHITECTURE.md)
+**Référence :** Les performances sont documentées dans [docs/ARCHITECTURE-fr.md](ARCHITECTURE-fr.md)
 
 ---
 
@@ -369,7 +369,7 @@ Un graphe DFC enrichi contenant vos données originales + les nouvelles entités
 3. **Isoler le problème** : tester avec une seule commande
 4. **Comparer avec les exemples** du dossier `dataset/`
 
-**Référence :** Le guide de développement [docs/DEVELOPPEMENT.md](DEVELOPPEMENT.md) détaille le debugging
+**Référence :** Le guide de développement [docs/DEVELOPPEMENT-fr.md](DEVELOPPEMENT-fr.md) détaille le debugging
 
 ---
 
@@ -397,7 +397,7 @@ Actuellement, certains paramètres sont fixes dans le code. Pour les modifier :
 - Export vers applications GPS
 - Interface de visualisation dédiée
 
-**Référence :** Les évolutions prévues sont dans [docs/CONTEXTE.md](CONTEXTE.md)
+**Référence :** Les évolutions prévues sont dans [docs/CONTEXTE-fr.md](CONTEXTE-fr.md)
 
 ---
 
@@ -405,9 +405,9 @@ Actuellement, certains paramètres sont fixes dans le code. Pour les modifier :
 
 ### Documentation
 
-- **API détaillée :** [docs/API.md](API.md)
-- **Architecture :** [docs/ARCHITECTURE.md](ARCHITECTURE.md)
-- **Transformations :** [docs/TRANSFORMATIONS.md](TRANSFORMATIONS.md)
+- **API détaillée :** [docs/API-fr.md](API-fr.md)
+- **Architecture :** [docs/ARCHITECTURE-fr.md](ARCHITECTURE-fr.md)
+- **Transformations :** [docs/TRANSFORMATIONS-fr.md](TRANSFORMATIONS-fr.md)
 
 ### Support
 

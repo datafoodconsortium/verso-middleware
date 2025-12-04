@@ -366,7 +366,7 @@ En production, un rate limiting devrait être configuré :
 - Pour éviter la surcharge du service
 - Pour contrôler les coûts API Verso
 
-**Référence :** Voir [docs/DEPLOIEMENT.md](DEPLOIEMENT.md) pour la configuration recommandée
+**Référence :** Voir [docs/DEPLOIEMENT-fr.md](DEPLOIEMENT-fr.md) pour la configuration recommandée
 
 ---
 
@@ -376,10 +376,10 @@ En production, un rate limiting devrait être configuré :
 
 - **Format DFC détaillé :** [Business API DFC](https://github.com/datafoodconsortium/business-api)
 - **Exemples de données :** Dossier `dataset/` du projet
-- **Transformations :** [docs/TRANSFORMATIONS.md](TRANSFORMATIONS.md)
+- **Transformations :** [docs/TRANSFORMATIONS-fr.md](TRANSFORMATIONS-fr.md)
 
 ### Support
 
 - **Questions générales :** [GitHub Discussions](../../discussions)
 - **Bugs et problèmes :** [GitHub Issues](../../issues)
-- **Guide de déploiement :** [docs/DEPLOIEMENT.md](DEPLOIEMENT.md)
+- **Guide de déploiement :** [docs/DEPLOIEMENT-fr.md](DEPLOIEMENT-fr.md)

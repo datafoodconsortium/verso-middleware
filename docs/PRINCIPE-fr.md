@@ -159,16 +159,17 @@ Route 3: Producteur C → Client 3 → Producteur C
 ⚠️ **Pas de contraintes de capacité** - Volume illimité  
 ⚠️ **Pas de gestion des retours** - Uniquement aller-retour dépôt  
 
-**📖 Évolutions prévues :** [Contexte et Roadmap](docs/CONTEXTE.md)
+**📖 Évolutions prévues :** [Contexte et Roadmap](docs/CONTEXTE-fr.md)
 
 ---
 
 ## Pour Aller Plus Loin
 
-- [📖 Guide API détaillé](docs/API.md) - Tous les endpoints et formats
-- [📦 Exemples concrets](docs/EXEMPLES.md) - Code et datasets
-- [🏗️ Architecture technique](docs/ARCHITECTURE.md) - Fonctionnement interne
-- [⚙️ Transformations](docs/TRANSFORMATIONS.md) - Logique de conversion
-- [🚀 Déploiement](docs/DEPLOIEMENT.md) - Installation production
-- [💻 Développement](docs/DEVELOPPEMENT.md) - Contribuer au code
+- [📖 Guide API détaillé](docs/API-fr.md) - Tous les endpoints et formats
+- [📦 Exemples concrets](docs/EXEMPLES-fr.md) - Code et datasets
+- [🏗️ Architecture technique](docs/ARCHITECTURE-fr.md) - Fonctionnement interne
+- [⚙️ Transformations](docs/TRANSFORMATIONS-fr.md) - Logique de conversion
+- [🚀 Déploiement](docs/DEPLOIEMENT-fr.md) - Installation production
+- [💻 Développement](docs/DEVELOPPEMENT-fr.md) - Contribuer au code
+
 

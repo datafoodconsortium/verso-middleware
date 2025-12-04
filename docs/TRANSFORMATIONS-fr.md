@@ -571,7 +571,7 @@ Comparer vos données avec ces exemples pour identifier les différences.
 
 - **Code source :** `src/optimizationService.js` (~400 lignes)
 - **Tests :** `tests/optimizationService.test.js`
-- **Architecture :** [docs/ARCHITECTURE.md](ARCHITECTURE.md)
+- **Architecture :** [docs/ARCHITECTURE-fr.md](ARCHITECTURE-fr.md)
 
 ### Standards
 
@@ -583,4 +583,4 @@ Comparer vos données avec ces exemples pour identifier les différences.
 
 - **Questions :** [GitHub Discussions](../../discussions)
 - **Bugs :** [GitHub Issues](../../issues)
-- **Guide développeur :** [docs/DEVELOPPEMENT.md](DEVELOPPEMENT.md)
+- **Guide développeur :** [docs/DEVELOPPEMENT-fr.md](DEVELOPPEMENT-fr.md)
