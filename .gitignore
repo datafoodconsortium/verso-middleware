@@ -3,10 +3,8 @@ node_modules/
 yarn.lock
 package-lock.json
 
-# Environment
-.env
-.env.local
-.env.*.local
+# Configuration (stored in ../secrets/)
+config.json
 
 # Logs
 logs

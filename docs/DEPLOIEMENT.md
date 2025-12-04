@@ -42,20 +42,23 @@ Contact avec Verso (https://verso-optim.com/)
 
 ### 2. Préparer la Configuration
 
-Le middleware nécessite 4 paramètres essentiels :
+Le middleware nécessite un fichier de configuration JSON avec 4 paramètres :
 
 | Paramètre | Description | Exemple |
 |-----------|-------------|---------|
 | `VERSO_OPTIM_API_URL` | URL de l'API Verso | `https://api.verso-optim.com/vrp/v1/solve` |
-| `VERSO_API_KEY` | Votre clé API Verso | `vh61l1mw1b8...` |
+| `VERSO_API_KEY` | Votre clé API Verso | `votre-clé-api` |
 | `CONTEXT_JSON_URL` | URL du contexte DFC | `https://cdn.jsdelivr.net/.../context.json` |
 | `JSONLD_BASE` | Base URI pour les IDs | `http://verso-middleware.votre-domaine.com` |
 
-**Deux méthodes de configuration :**
-- Fichier JSON (recommandé) : `config.json`
-- Variables d'environnement : fichier `.env`
+**Emplacement :** `../secrets/production/config-verso.json`
 
-**Référence :** Voir `config.example.json` pour la structure
+**⚠️ Sécurité :**
+- Configuration stockée dans le dépôt `@secrets` (privé)
+- Montée comme volume Docker : `../secrets/production/config-verso.json:/app/config.json`
+- Ne jamais committer dans le dépôt public
+
+**Référence :** Voir `config.example.json` pour la structure complète
 
 ---
 
@@ -283,7 +286,7 @@ Configurer un rate limiting au niveau Nginx ou dans le middleware (express-rate-
 ### Backup
 
 **Éléments à sauvegarder :**
-- Fichier de configuration (`config.json` ou `.env`)
+- Fichier de configuration `config.json` monté depuis `@secrets`
 - Logs (si analyse nécessaire)
 
 **Éléments non critiques :**

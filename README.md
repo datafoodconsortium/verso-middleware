@@ -104,6 +104,8 @@ curl http://localhost:3001/health
 
 ### Configuration Requise
 
+**Fichier :** `../secrets/production/config-verso.json`
+
 ```json
 {
   "VERSO_OPTIM_API_URL": "https://api.verso-optim.com/vrp/v1/solve",
@@ -113,7 +115,12 @@ curl http://localhost:3001/health
 }
 ```
 
-**📖 Guide complet de déploiement :** [Déploiement](docs/DEPLOIEMENT.md)
+**⚠️ Important :**
+- Configuration stockée dans `@secrets` (dépôt privé)
+- Montée comme volume Docker dans `/app/config.json`
+- Ne jamais committer dans le dépôt public
+
+**📖 Guide complet :** [Déploiement](docs/DEPLOIEMENT.md)
 
 ---
 

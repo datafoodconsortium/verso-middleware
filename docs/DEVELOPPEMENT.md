@@ -28,10 +28,10 @@ Guide pour les développeurs souhaitant contribuer ou maintenir le projet.
    - Forker le projet sur GitHub (si contribution)
    - Cloner localement
 
-2. **Créer la configuration**
-   - `mkdir -p ../secrets/production`
-   - `cp config.example.json ../secrets/production/config-verso.json`
-   - Renseigner la clé API Verso (nécessaire pour tests réels)
+2. **Vérifier la configuration**
+   - S'assurer que `../secrets/production/config-verso.json` existe
+   - Vérifier que la clé API Verso est renseignée
+   - Référence : `config.example.json` pour la structure
 
 3. **Créer le réseau Docker (une seule fois)**
    - `docker network create dfc_shared_network`

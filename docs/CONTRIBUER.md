@@ -96,7 +96,7 @@ yarn install
 
 # Configurer
 cp .env.example .env
-# Éditer .env
+# Éditer config-verso.json dans @secrets
 
 # Développer en mode watch
 yarn dev

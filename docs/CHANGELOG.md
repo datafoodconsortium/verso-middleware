@@ -41,7 +41,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
   - `docker-compose.yml` (dev)
   - `docker-compose-prod.yml` (production)
   - `docker-compose-test.yml` (tests)
-- Configuration via `.env` ou `config.json`
+- Configuration via `config.json` monté depuis `../secrets/production/`
 - Dataset d'exemple dans `dataset/`
 - Documentation complète :
   - README restructuré par rôle
